@@ -37,3 +37,5 @@ npm run start
 ## .env
 
 ```bash
+jwt_secret=
+```

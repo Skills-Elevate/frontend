@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/poppins/Poppins-Light.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary-color:  #fff8e9;
+  --secondary-color:  #f9a62a;
+
+  --dark-orange: #e25f17;
+  --dark-blue: #133544;
+  --blue: #2eb29d;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from '../../../shared/services/users.service';
-import { AuthService } from '../../../shared/services/auth.service';
+import { JwtService } from "../../../shared/services/jwt.service";
 import { UserI } from '../../../shared/models/users.module';
 
 @Component({
@@ -12,7 +12,7 @@ import { UserI } from '../../../shared/models/users.module';
 export class BlogComponent implements OnInit {
   users: UserI[] = [];
 
-  constructor(private usersService: UsersService, private authService: AuthService, private router: Router) {}
+  constructor(private usersService: UsersService, private JwtService: JwtService, private router: Router) {}
 
   ngOnInit() {
     this.loadUsers();
@@ -28,7 +28,7 @@ export class BlogComponent implements OnInit {
   }
 
   logout() {
-    this.authService.clearTokens();
+    this.JwtService.clearTokens();
     this.router.navigate(['/']);
   }
 }

@@ -3,16 +3,16 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse
 import { Observable, throwError, from } from 'rxjs';
 import { catchError, switchMap, finalize } from 'rxjs/operators';
 import { Router } from "@angular/router";
-import { AuthService } from '../services/auth.service';
+import { JwtService } from "../services/jwt.service";
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
   private refreshing = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private JwtService: JwtService, private router: Router) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const token = this.authService.getAccessToken();
+    const token = this.JwtService.getAccessToken();
 
     if (token) {
       request = this.addToken(request, token);
@@ -29,14 +29,14 @@ export class JwtInterceptor implements HttpInterceptor {
 
   private handle401Error(request: HttpRequest<any>, next: HttpHandler, error: any) {
     if (error instanceof HttpErrorResponse && error.status === 401) {
-      const refreshToken = this.authService.getRefreshAccessToken();
+      const refreshToken = this.JwtService.getRefreshAccessToken();
 
       if (refreshToken && !this.refreshing) {
         this.refreshing = true;
 
-        return from(this.authService.refreshAccessToken(refreshToken)).pipe(
+        return from(this.JwtService.refreshAccessToken(refreshToken)).pipe(
           switchMap((refreshResponse) => {
-            this.authService.setAccessToken(refreshResponse.access_token);
+            this.JwtService.setAccessToken(refreshResponse.access_token);
 
             const newRequest = this.addToken(request, refreshResponse.access_token);
 
@@ -56,7 +56,7 @@ export class JwtInterceptor implements HttpInterceptor {
   }
 
   private handleTokenError() {
-    this.authService.clearTokens();
+    this.JwtService.clearTokens();
     this.router.navigate(['/login']);
   }
 

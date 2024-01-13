@@ -43,8 +43,8 @@ export class AuthService {
   //   return this.http.post<any>(`${this.apiUrl}/auth/refresh_token`, { refresh_token: refreshToken });
   // }
 
-  // clearTokens(): void {
-  //   localStorage.removeItem(this.accessTokenKey);
-  //   localStorage.removeItem(this.refreshAccessTokenKey);
-  // }
+  clearTokens(): void {
+    localStorage.removeItem(this.accessTokenKey);
+    localStorage.removeItem(this.refreshAccessTokenKey);
+  }
 }

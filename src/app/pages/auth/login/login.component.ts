@@ -19,6 +19,7 @@ export class LoginComponent {
 
     this.authService.login(credentials).subscribe(
       response => {
+        console.log(response);
         this.authService.handleLoginResponse(response);
         this.router.navigate(['/blog']);
       },

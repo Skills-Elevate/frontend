@@ -23,7 +23,7 @@ export class AuthService {
     this.setRefreshAccessToken(response.refresh_token);
   }
 
-  private setAccessToken(token: string): void {
+  setAccessToken(token: string): void {
     localStorage.setItem(this.accessTokenKey, token);
   }
 
@@ -35,13 +35,13 @@ export class AuthService {
     return localStorage.getItem(this.accessTokenKey);
   }
 
-  // getRefreshAccessToken(): string | null {
-  //   return localStorage.getItem(this.refreshAccessTokenKey);
-  // }
+  getRefreshAccessToken(): string | null {
+    return localStorage.getItem(this.refreshAccessTokenKey);
+  }
 
-  // refreshAccessToken(refreshToken: string): Observable<any> {
-  //   return this.http.post<any>(`${this.apiUrl}/auth/refresh_token`, { refresh_token: refreshToken });
-  // }
+  refreshAccessToken(refreshToken: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/auth/refresh_token`, { refresh_token: refreshToken });
+  }
 
   clearTokens(): void {
     localStorage.removeItem(this.accessTokenKey);

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
 import { environment } from '../environments/environment.dev';
 import { AuthLoginDto } from '../models/users.module';
+import {catchError} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root',
@@ -40,7 +41,14 @@ export class AuthService {
   }
 
   refreshAccessToken(refreshToken: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/auth/refresh_token`, { refresh_token: refreshToken });
+    return this.http.post<any>(`${this.apiUrl}/auth/refresh_token`, { refresh_token: refreshToken }).pipe(
+      catchError((error) => {
+        if (error instanceof HttpErrorResponse && error.status === 401) {
+          console.error('Refresh token expired:', error);
+        }
+        return throwError(error);
+      })
+    );
   }
 
   clearTokens(): void {

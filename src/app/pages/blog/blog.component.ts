@@ -29,6 +29,6 @@ export class BlogComponent implements OnInit {
 
   logout() {
     this.JwtService.clearTokens();
-    this.router.navigate(['/']);
+    this.router.navigate(['/welcome']);
   }
 }

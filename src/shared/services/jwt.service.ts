@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable, throwError} from "rxjs";
-import {catchError} from "rxjs/operators";
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {environment} from "../environments/environment.dev";
+import { Observable, throwError } from "rxjs";
+import { catchError } from "rxjs/operators";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { environment } from "../environments/environment.dev";
 
 @Injectable({
   providedIn: 'root'

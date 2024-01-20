@@ -1,0 +1,37 @@
+#public-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#public-header .container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#public-header .container .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+#public-header .container .logo-container .logo {
+  width: 5rem;
+}
+
+#public-header .container .logo-container .logo img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+#public-header .container .logo-container .title h1 {
+  color: #111;
+}

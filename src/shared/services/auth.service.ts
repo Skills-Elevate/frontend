@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { environment } from '../environments/environment.dev';
 import { AuthLoginDto } from '../models/users.module';
-import {JwtService} from "./jwt.service";
+import { JwtService } from "./jwt.service";
 
 @Injectable({
   providedIn: 'root',

@@ -2,7 +2,7 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { HomeComponent } from './pages/home/home.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BlogComponent } from './pages/blog/blog.component';
 import { LoginComponent } from './pages/auth/login/login.component';
@@ -11,14 +11,15 @@ import { environment } from '../shared/environments/environment.dev';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from '../shared/interceptors/jwt.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    WelcomeComponent,
     BlogComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +30,7 @@ import { JwtInterceptor } from '../shared/interceptors/jwt.interceptor';
       registrationStrategy: `registerWhenStable:${environment.apiPort}`,
     }),
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {

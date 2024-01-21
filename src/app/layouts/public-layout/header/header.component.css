@@ -33,5 +33,5 @@
 }
 
 #public-header .container .logo-container .title h1 {
-  color: #111;
+  color: var(--title-text-color);
 }

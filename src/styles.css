@@ -16,7 +16,7 @@ body {
   --dark-orange: #e25f17;
   --dark-blue: #133544;
   --blue: #2eb29d;
-}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  --title-text-color: #333;
+  --text-color: #555;
+}

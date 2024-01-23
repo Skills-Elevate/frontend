@@ -26,9 +26,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## Start this projet
+## Installation
 
-npm install
+```bash
+$ npm install
+```
 
-npm run start
+## Running the app
+
+```bash
+$ npm run start
+```
 

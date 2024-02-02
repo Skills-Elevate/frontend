@@ -137,5 +137,10 @@
   border: none;
   padding: 12px;
   border-radius: 10px;
-  background-color: var(--dark-orange);
+  background-color: var(--secondary-color);
+}
+
+.cours-populaire input[type="button"]:hover {
+  cursor: pointer;
+  background-color: var(--secondary-color-hover);
 }

@@ -22,16 +22,25 @@
   border-radius: 25px;
 }
 
-.welcome h1 {
+.welcome .title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.welcome .title h1 {
   font-weight: bold;
   font-size: 2.20rem;
+  color: var(--dark-blue);
+}
+
+.welcome .title p {
   text-align: center;
   color: var(--dark-blue);
 }
 
 .welcome .cards {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
@@ -85,6 +94,5 @@
   font-size: .75rem;
   line-height: 1.30;
   margin: 0;
-  text-align: center;
   color: var(--text-color);
 }

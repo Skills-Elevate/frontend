@@ -1,4 +1,35 @@
-.cards {
+.header {
+  background: var(--dark-blue);
+}
+
+.header .container {
+  max-width: 500px;
+  width: 100%;
+  padding: 3.5rem 0;
+}
+
+.header .container h1, p {
+  text-align: start;
+  color: var(--primary-color);
+}
+
+.header .container button {
+  background: var(--dark-blue);
+  color: var(--primary-color);
+  width: 150px;
+  padding: 15px 15px;
+  border: 1px solid var(--text-color);
+  border-radius: 25px;
+}
+
+.welcome h1 {
+  font-weight: bold;
+  font-size: 2.20rem;
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+.welcome .cards {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -8,7 +39,7 @@
   margin: 20px 0;
 }
 
-.card {
+.welcome .cards .card {
   width: 250px;
   height: 200px;
   border-radius: 15px;
@@ -17,7 +48,7 @@
   box-shadow: 0px 1px 5px var(--dark-blue);
 }
 
-.card-container {
+.welcome .cards .card .card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +57,7 @@
   justify-content: center;
 }
 
-.rounded-img {
+.welcome .cards .card .card-container .rounded-img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,27 +68,23 @@
   margin-bottom: 10px;
 }
 
-h1 {
-  font-weight: bold;
-  font-size: 2.20rem;
-  text-align: center;
-  color: var(--dark-blue);
+.welcome .cards .card .card-container .rounded-img .material-symbols-outlined {
+  color: var(--primary-color);
+  font-size: 2.5rem;
 }
 
-h4 {
+.welcome .cards .card .card-container .card-description h4 {
   font-size: .90rem;
   font-weight: bold;
   line-height: 1.50;
   margin: 5px;
+  color: var(--dark-blue);
 }
 
-p {
+.welcome .cards .card .card-container .card-description p {
   font-size: .75rem;
   line-height: 1.30;
   margin: 0;
-}
-
-.material-symbols-outlined {
-  color: var(--primary-color);
-  font-size: 2.5rem;
+  text-align: center;
+  color: var(--text-color);
 }

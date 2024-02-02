@@ -56,6 +56,11 @@
   padding: 13px 15px;
   border: 1px solid var(--text-color);
   border-radius: 25px;
+  cursor: pointer;
+}
+
+#connect-header .navbar button:hover {
+  background: var(--secondary-color);
 }
 
 #connect-header .line {

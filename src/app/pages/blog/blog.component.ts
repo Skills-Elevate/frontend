@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { UsersService } from '../../../shared/services/users.service';
-import { JwtService } from "../../../shared/services/jwt.service";
 import { UserI } from '../../../shared/models/users.module';
 
 @Component({
@@ -12,7 +10,7 @@ import { UserI } from '../../../shared/models/users.module';
 export class BlogComponent implements OnInit {
   users: UserI[] = [];
 
-  constructor(private usersService: UsersService, private JwtService: JwtService, private router: Router) {}
+  constructor(private usersService: UsersService) {}
 
   ngOnInit() {
     this.loadUsers();
@@ -25,10 +23,5 @@ export class BlogComponent implements OnInit {
       },
       error => console.error('login failed:', error)
     );
-  }
-
-  logout() {
-    this.JwtService.clearTokens();
-    this.router.navigate(['/welcome']);
   }
 }

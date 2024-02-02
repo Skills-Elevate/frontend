@@ -1,5 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsersService } from '../../../../shared/services/users.service';
+import { JwtService } from '../../../../shared/services/jwt.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  router = inject(Router);
+
+  constructor(private JwtService: JwtService, private router: Router) {}
 
   goToHome() {
     this.router.navigate(['/']);
+  }
+
+  logout() {
+    this.JwtService.clearTokens();
+    this.router.navigate(['/welcome']);
   }
 }

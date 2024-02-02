@@ -125,13 +125,12 @@
   padding: 0 10px;
   border: 1px solid var(--text-color);
   border-radius: 10px;
-  transition: box-shadow 0.3s ease; /* Ajout d'une transition pour l'ombre */
+  transition: box-shadow 0.3s ease;
 }
 
-/* Amélioration du focus sur les inputs */
 .cours-populaire .filtre input[type="text"]:focus {
-  outline: none; /* Suppression de l'outline par défaut */
-  box-shadow: 0 0 5px transparent; /* Ajout d'une ombre pour le focus */
+  outline: none;
+  box-shadow: 0 0 5px transparent;
 }
 
 .cours-populaire .filtre input[type="text"] {
@@ -142,10 +141,10 @@
 
 .cours-populaire input[type="button"] {
   border: none;
-  padding: 12px 24px; /* Ajustement pour une meilleure apparence */
+  padding: 12px 24px;
   border-radius: 10px;
   background-color: var(--secondary-color);
-  transition: background-color 0.3s; /* Douce transition pour le survol */
+  transition: background-color 0.3s;
 }
 
 .cours-populaire input[type="button"]:hover {

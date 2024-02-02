@@ -13,6 +13,7 @@ body {
 :root {
   --primary-color:  #fff8e9;
   --secondary-color:  #f9a62a;
+  --secondary-color-hover: #da9125;
 
   --dark-orange: #e25f17;
   --dark-blue: #133544;
@@ -54,4 +55,25 @@ p {
   font-size: 1.125rem;
   line-height: 1.75rem;
   color: var(--text-color);
+}
+
+/* Add this to style the scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-color-hover);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: var(--primary-color);
 }

@@ -2,12 +2,11 @@
   width: 100%;
   text-align: center;
   margin-bottom: 1rem;
+  background: red;
 }
 
 #connect-header .container {
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
   display: flex;
   justify-content: center;
   align-items: center;

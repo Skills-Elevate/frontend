@@ -20,3 +20,28 @@ body {
   --title-text-color: #333;
   --text-color: #555;
 }
+
+section {
+  padding: 0 2rem;
+  margin-bottom: 8.5rem;
+}
+
+h1, p, span, a {
+  transition-property: all;
+  transition-duration: .15s;
+}
+
+h1 {
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -.025em;
+  margin: 0;
+  color: var(--title-text-color);
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--text-color);
+}

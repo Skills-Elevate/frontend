@@ -102,3 +102,40 @@
   margin: 0;
   color: var(--text-color);
 }
+
+.cours-populaire h1 {
+  font-weight: bold;
+  font-size: 2.20rem;
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+.cours-populaire .filtres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.cours-populaire .filtre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+}
+
+.cours-populaire .filtre input[type="text"] {
+  border: none;
+  padding: 12px;
+  background-color: transparent;
+}
+
+.cours-populaire input[type="button"] {
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: var(--dark-orange);
+}

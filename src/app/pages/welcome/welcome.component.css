@@ -96,6 +96,7 @@
 }
 
 .welcome .cards .card .card-container .card-description p {
+  text-align: center;
   font-size: .75rem;
   line-height: 1.30;
   margin: 0;

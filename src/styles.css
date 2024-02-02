@@ -21,7 +21,7 @@ body {
   --text-color: #555;
 }
 
-section {
+header, section {
   padding: 0 2rem;
   margin-bottom: 8.5rem;
 }
@@ -32,6 +32,15 @@ h1, p, span, a {
 }
 
 h1 {
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -.025em;
+  margin: 0;
+  color: var(--title-text-color);
+}
+
+h4 {
   font-size: 3.75rem;
   line-height: 1;
   font-weight: 700;

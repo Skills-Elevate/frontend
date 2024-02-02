@@ -21,8 +21,8 @@ body {
   --text-color: #555;
 }
 
-section {
-  padding: 0 2rem;
+header, section {
+  padding: 0 4rem;
   margin-bottom: 8.5rem;
 }
 

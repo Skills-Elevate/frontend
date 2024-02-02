@@ -10,6 +10,10 @@ export class HeaderComponent {
   router = inject(Router);
 
   goToHome() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/welcome']);
+  }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 }

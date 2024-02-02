@@ -14,12 +14,17 @@
 }
 
 .header .container button {
-  background: var(--dark-blue);
-  color: var(--primary-color);
   width: 150px;
   padding: 15px 15px;
   border: 1px solid var(--text-color);
   border-radius: 25px;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.header .container button:hover {
+  background: var(--dark-blue);
 }
 
 .welcome .title {

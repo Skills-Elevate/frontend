@@ -1,71 +1,44 @@
 #connect-header {
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 0rem;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  height: 100px;
+  z-index: 1000;
   background: var(--dark-blue);
 }
 
-#connect-header .navbar {
-  width: 100%;
+#connect-header .logo {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  width: 5rem;
   cursor: pointer;
-  padding: 8px 0;
 }
 
-#connect-header .navbar .logo {
-  display: flex;
-  width: 6rem;
-}
-
-#connect-header .navbar .logo img {
+#connect-header .logo img {
   max-width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-#connect-header .navbar .links {
+#connect-header .buttons {
   display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
+  gap: 10px;
 }
 
-#connect-header .navbar .links ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-
-#connect-header .navbar .links ul li {
-  padding: 5px 20px;
-  list-style-type: none;
-}
-
-#connect-header .navbar .links a {
+#connect-header button {
+  background: var(--secondary-color);
   color: var(--primary-color);
-  text-decoration: none;
-}
-
-#connect-header .navbar button {
-  background: var(--dark-blue);
-  color: var(--primary-color);
-  width: 150px;
-  padding: 13px 15px;
-  border: 1px solid var(--text-color);
-  border-radius: 25px;
   cursor: pointer;
 }
 
-#connect-header .navbar button:hover {
-  background: var(--secondary-color);
+#connect-header button:hover {
+  background: var(--secondary-color-hover);
 }
 
-#connect-header .line {
-  width: 100%;
-  height: 1px;
-  background: var(--text-color);
-  margin-top: 10px;
+#connect-header .logout {
+  width: 150px;
+  padding: 13px 15px;
+  border-radius: 25px;
 }
+

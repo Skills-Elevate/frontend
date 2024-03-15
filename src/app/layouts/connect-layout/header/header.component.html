@@ -1,26 +1,18 @@
-<header id="connect-header">
-  <div class="navbar">
-    <div class="logo" (click)="goToHome()">
-      <img src="assets/imgs/logo.png" alt="logo" />
-    </div>
-    <div class="links">
-      <ul>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Blog</a></li>
-      </ul>
-    </div>
-    <div class="auth_button">
-      <button (click)="logout()">LogOut</button>
-    </div>
+<mat-toolbar id="connect-header">
+  <div class="logo" (click)="goToHome()">
+    <img src="assets/imgs/logo.png" alt="logo" />
   </div>
-  <div class="line"></div>
-
-<!--  <div class="container">-->
-<!--    <h1>Le Lorem Ipsum est simplement</h1>-->
-<!--    <p>composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie</p>-->
-<!--    <button>Login/Sign Up</button>-->
-<!--  </div>-->
-</header>
+  <div class="links">
+    <ul>
+      <li><a href="">Blog</a></li>
+      <li><a href="">Blog</a></li>
+      <li><a href="">Blog</a></li>
+      <li><a href="">Blog</a></li>
+      <li><a href="">Blog</a></li>
+    </ul>
+  </div>
+  <button mat-fab class="logout" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    LogOut
+  </button>
+</mat-toolbar>

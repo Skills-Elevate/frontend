@@ -1,3 +1,8 @@
-<div *ngFor="let user of users">
-  <p>{{ user.email }}</p>
+<div *ngFor="let post of posts">
+  <p>{{ post.title }}</p>
+  <p>{{ post.content }}</p>
+  <p>{{ post.published }}</p>
+  <p>{{ post.createdAt }}</p>
+  <p>{{ post.categoryId }}</p>
+  <p>{{ post.authorId }}</p>
 </div>

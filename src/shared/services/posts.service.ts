@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CreatePostDto, PostI } from '../models/posts.module';
-import { environment } from '../environments/environment.dev'; // Assurez-vous de spécifier le chemin correct
+import { environment } from '../environments/environment.dev';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UsersService {
+export class PostsService {
   private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
@@ -19,6 +19,7 @@ export class UsersService {
   findAll(): Observable<PostI[]> {
     return this.http.get<PostI[]>(`${this.apiUrl}/posts`);
   }
+
   findOne(id: string): Observable<PostI> {
     return this.http.get<PostI>(`${this.apiUrl}/posts/${id}`);
   }

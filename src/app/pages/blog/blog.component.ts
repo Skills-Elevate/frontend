@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../../../shared/services/users.service';
-import { UserI } from '../../../shared/models/users.module';
+import { PostsService } from '../../../shared/services/posts.service';
+import { PostI } from '../../../shared/models/posts.module';
 
 @Component({
   selector: 'app-blog',
@@ -8,20 +8,23 @@ import { UserI } from '../../../shared/models/users.module';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  users: UserI[] = [];
+  posts: PostI[] = [];
 
-  constructor(private usersService: UsersService) {}
+  constructor(private postsService: PostsService) {}
 
   ngOnInit() {
-    this.loadUsers();
+    this.loadPosts();
   }
 
-  loadUsers() {
-    this.usersService.findAllUsers().subscribe(
-      response => {
-        this.users = response;
+  loadPosts() {
+    this.postsService.findAll().subscribe({
+      next: (response: PostI[]) => {
+        this.posts = response;
+        console.log(this.posts)
       },
-      error => console.error('login failed:', error)
-    );
+      error: (error: any) => {
+        console.error('login failed:', error);
+      }
+    });
   }
 }

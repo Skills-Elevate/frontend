@@ -1,11 +1,9 @@
-<header id="public-header">
-  <div class="navbar">
-    <div class="logo" (click)="goToHome()">
-      <img src="assets/imgs/logo.png" alt="logo" />
-    </div>
-    <div class="auth_button">
-      <button (click)="goToLogin()">Login/Sign Up</button>
-    </div>
+<mat-toolbar id="public-header">
+  <div class="logo" (click)="goToHome()">
+    <img src="assets/imgs/logo.png" alt="logo" />
   </div>
-  <div class="line"></div>
-</header>
+  <button mat-fab class="logout" (click)="goToLogin()">
+    <mat-icon>logout</mat-icon>
+    Login/Sign Up
+  </button>
+</mat-toolbar>

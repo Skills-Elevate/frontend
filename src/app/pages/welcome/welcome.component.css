@@ -244,3 +244,10 @@ p {
   text-decoration: none;
 }
 
+.cours-info h4 {
+  margin-top: 20px;
+  margin-left: 8px;
+  font-size: 25px;
+  text-align: start;
+}
+

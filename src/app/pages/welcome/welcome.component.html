@@ -66,90 +66,31 @@
 
 <section class="cours-populaire">
   <h1>Nos cours populaires</h1>
-  <form>
-    <div class="filtres">
-      <div class="filtre">
-        <span class="material-symbols-outlined">search</span>
-        <input type="text" placeholder="nom du cour">
-      </div>
-      <div class="filtre">
-        <span class="material-symbols-outlined">person</span>
-        <input type="text" placeholder="nom du cour">
-      </div>
-      <div class="filtre">
-        <span class="material-symbols-outlined">search</span>
-        <input type="text" placeholder="nom du cour">
-      </div>
-        <input type="button" value="Rechercher">
-    </div>
-  </form>
-
   <div class="cours">
-
-    <div class="cours-card">
+    <div *ngFor="let course of courses" class="cours-card">
       <div class="cours-card-img">
-        <img src="https://picsum.photos/200/300" alt="">
+        <img [src]="course.imageUrl" alt="Image du cours">
       </div>
-      <div class="cours-author">
-        <img src="https://picsum.photos/30/30?random=1" alt="">
-        <p>John Doe</p>
-      </div>
-      <div class="cours-card-description-hr">
-        <hr>
-      </div>
-      <div class="cours-card-description">
-        <div class="cours-card-description-price">
-          <p>1000</p>
-          <span class="material-symbols-outlined">euro</span>
+      <div class="cours-info">
+        <div class="cours-author">
+          <img src="https://picsum.photos/30/30?random=1" alt="Auteur">
+          <p>{{ course.author }}</p>
         </div>
-        <div class="cours-card-description-buy">
-          <a href="#">Acheter</a>
+        <div class="cours-card-description-hr">
+          <hr>
         </div>
-      </div>
-    </div>
-
-    <div class="cours-card">
-      <div class="cours-card-img">
-        <img src="https://picsum.photos/200/300" alt="">
-      </div>
-      <div class="cours-author">
-        <img src="https://picsum.photos/30/30?random=2" alt="">
-        <p>John Doe</p>
-      </div>
-      <div class="cours-card-description-hr">
-        <hr>
-      </div>
-      <div class="cours-card-description">
-        <div class="cours-card-description-price">
-          <p>1000</p>
-          <span class="material-symbols-outlined">euro</span>
-        </div>
-        <div class="cours-card-description-buy">
-          <a href="#">Acheter</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="cours-card">
-      <div class="cours-card-img">
-        <img src="https://picsum.photos/200/300" alt="">
-      </div>
-      <div class="cours-author">
-        <img src="https://picsum.photos/30/30?random=3" alt="">
-        <p>John Doe</p>
-      </div>
-      <div class="cours-card-description-hr">
-        <hr>
-      </div>
-      <div class="cours-card-description">
-        <div class="cours-card-description-price">
-          <p>1000</p>
-          <span class="material-symbols-outlined">euro</span>
-        </div>
-        <div class="cours-card-description-buy">
-          <a href="#">Acheter</a>
+        <h4>{{ course.name }}</h4>
+        <div class="cours-card-description">
+          <div class="cours-card-description-price">
+            <p>{{ course.price }}</p>
+            <span class="material-symbols-outlined">euro</span>
+          </div>
+          <div class="cours-card-description-buy">
+            <a href="#">Acheter</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+

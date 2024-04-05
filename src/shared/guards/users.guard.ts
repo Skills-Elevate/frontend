@@ -18,7 +18,7 @@ export class UsersGuard {
     if (!this.JwtService.getAccessToken()) {
       return true;
     }
-    this.router.navigate(['/']);
+    this.router.navigate(['/blog']);
     return false;
   }
 }

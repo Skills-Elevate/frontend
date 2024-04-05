@@ -13,6 +13,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from '../shared/interceptors/jwt.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     }),
     FormsModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
   ],
   providers: [
     {

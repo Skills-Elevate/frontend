@@ -1,17 +1,19 @@
 section {
   display: flex;
-  justify-content: start;
+  flex-wrap: wrap;
   gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
 }
 
 mat-card {
-  margin-top: 2rem;
+  flex: 0 0 auto;
   max-width: 300px;
+  margin-top: 2rem;
 }
 
 mat-card, img, mat-card-content {
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  border-radius: 2rem 2rem 0 0;
 }
 
 mat-card-content {

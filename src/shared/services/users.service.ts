@@ -30,6 +30,6 @@ export class UsersService {
     return this.http.put<any>(`${this.apiUrl}/users`, { newName, email });
   }
   getProfile() {
-    return this.http.get<any>(`${this.apiUrl}/users/profil`);
+    return this.http.get<any>(`${this.apiUrl}/users/profile`);
   }
 }

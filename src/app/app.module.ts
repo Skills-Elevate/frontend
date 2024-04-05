@@ -17,6 +17,7 @@ import { MyaccountComponent } from './pages/myaccount/myaccount.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { NgOptimizedImage } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatCardModule,
     MatButtonModule,
+    NgOptimizedImage,
   ],
   providers: [
     {

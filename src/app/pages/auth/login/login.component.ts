@@ -17,13 +17,13 @@ export class LoginComponent {
   login() {
     const credentials: CreateUserDto = { email: this.email, password: this.password };
 
-    this.authService.login(credentials).subscribe(
-      response => {
+    this.authService.login(credentials).subscribe({
+      next: (response) => {
         console.log(response);
         this.authService.handleLoginResponse(response);
         this.router.navigate(['/courses']);
       },
-      error => console.error('login failed:', error)
-    );
+      error: (error) => console.error('login failed:', error)
+    });
   }
 }

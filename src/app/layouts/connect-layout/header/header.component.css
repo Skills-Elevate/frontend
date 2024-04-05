@@ -3,7 +3,7 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
-  padding: 10px;
+  padding: 0 6rem;
   height: 100px;
   z-index: 1000;
   background: var(--dark-blue);
@@ -19,6 +19,27 @@
   max-width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+.links {
+  background: red;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  padding: 2rem;
+  list-style: none;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
 #connect-header .buttons {

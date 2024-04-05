@@ -3,7 +3,7 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
-  padding: 10px;
+  padding: 0 6rem;
   height: 100px;
   z-index: 1000;
   background: var(--dark-blue);

@@ -17,12 +17,12 @@ export class RegisterComponent {
   register() {
     const newUser: CreateUserDto = { email: this.email, password: this.password };
 
-    this.usersService.createUser(newUser).subscribe(
-      response => {
+    this.usersService.createUser(newUser).subscribe({
+      next: (response) => {
         console.log('Registration successful:', response);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/blog']);
       },
-      error => console.error('Registration failed:', error)
-    );
+      error: (error) => console.error('Registration failed:', error)
+    });
   }
 }

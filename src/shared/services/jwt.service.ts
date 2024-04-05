@@ -3,6 +3,7 @@ import { Observable, throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { environment } from "../environments/environment.dev";
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,15 @@ export class JwtService {
 
   getRefreshAccessToken(): string | null {
     return localStorage.getItem(this.refreshAccessTokenKey);
+  }
+
+  getUserEmail(): string | null {
+    const token = this.getAccessToken();
+    if (token) {
+      const decoded: any = jwtDecode(token);
+      return decoded.userEmail;
+    }
+    return null;
   }
 
   refreshAccessToken(refreshToken: string): Observable<any> {

@@ -1,0 +1,58 @@
+/* Styles globaux pour la page de profil */
+.profile-info, .my-account-form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+/* Style pour les informations de profil */
+.profile-info {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.profile-info img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border: 3px solid #007bff; /* Couleur de bordure autour de l'image de profil */
+}
+
+.profile-info h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.profile-info p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Style pour le formulaire de mise à jour du nom */
+.my-account-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-account-form input, .my-account-form button {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.my-account-form button {
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.my-account-form button:hover {
+  background-color: #0056b3; /* Couleur de fond du bouton au survol */
+}

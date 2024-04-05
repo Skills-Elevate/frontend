@@ -8,11 +8,13 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { environment } from '../shared/environments/environment.dev';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from '../shared/interceptors/jwt.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { MyaccountComponent } from './pages/myaccount/myaccount.component';
+import { CoursesComponent } from './pages/courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     LoginComponent,
     RegisterComponent,
     NotFoundComponent,
+    MyaccountComponent,
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     }),
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

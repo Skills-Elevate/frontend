@@ -11,8 +11,14 @@
       <li><a href="">Blog</a></li>
     </ul>
   </div>
-  <button mat-fab class="logout" (click)="logout()">
-    <mat-icon>logout</mat-icon>
-    LogOut
-  </button>
+  <div style="display: flex; gap: 15px;align-items: center;">
+    <div>
+      <button (click)="myaccount()">Mon compte</button>
+    </div>
+
+    <button mat-fab class="logout" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      LogOut
+    </button>
+  </div>
 </mat-toolbar>

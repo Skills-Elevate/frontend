@@ -21,7 +21,7 @@ export class LoginComponent {
       response => {
         console.log(response);
         this.authService.handleLoginResponse(response);
-        this.router.navigate(['/blog']);
+        this.router.navigate(['/courses']);
       },
       error => console.error('login failed:', error)
     );

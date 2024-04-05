@@ -20,4 +20,8 @@ export class HeaderComponent {
     this.JwtService.clearTokens();
     this.router.navigate(['/welcome']);
   }
+
+  myaccount() {
+    this.router.navigate(['/myaccount']);
+  }
 }

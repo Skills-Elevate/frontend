@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConnectLayoutComponent } from './connect-layout.component';
 import { BlogComponent } from "../../pages/blog/blog.component";
+import {MyaccountComponent} from "../../pages/myaccount/myaccount.component";
+import {CoursesComponent} from "../../pages/courses/courses.component";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'blog',
+    redirectTo: 'courses',
     pathMatch: 'full'
   },
   {
@@ -14,9 +16,13 @@ const routes: Routes = [
     component: ConnectLayoutComponent,
     children: [
       {
-        path: 'blog',
-        component: BlogComponent,
+        path: 'courses',
+        component: CoursesComponent,
       },
+      {
+        path: 'myaccount',
+        component: MyaccountComponent,
+      }
     ]
   }
 ];

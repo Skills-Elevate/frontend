@@ -13,7 +13,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from '../shared/interceptors/jwt.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { MyaccountComponent } from './pages/myaccount/myaccount.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -27,7 +27,7 @@ import { NgOptimizedImage } from '@angular/common';
     LoginComponent,
     RegisterComponent,
     NotFoundComponent,
-    MyaccountComponent,
+    ProfileComponent,
     CoursesComponent,
   ],
   imports: [

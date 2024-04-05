@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {UsersService} from "../../../shared/services/users.service";
 
 @Component({
-  selector: 'app-myaccount',
-  templateUrl: './myaccount.component.html',
-  styleUrls: ['./myaccount.component.css'],
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css'],
 })
-export class MyaccountComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   newName: string = '';
   userProfile: any = null;
 
@@ -26,7 +26,7 @@ export class MyaccountComponent implements OnInit {
   }
 
   getProfile() {
-    this.usersService.getProfil().subscribe({
+    this.usersService.getProfile().subscribe({
       next: (profile: any) => {
         this.userProfile = profile;
       },

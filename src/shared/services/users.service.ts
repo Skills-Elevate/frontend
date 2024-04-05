@@ -20,6 +20,7 @@ export class UsersService {
   findAllUsers(): Observable<UserI[]> {
     return this.http.get<UserI[]>(`${this.apiUrl}/users`);
   }
+
   updateName(newName: string): Observable<any> {
     const email = this.JwtService.getUserEmail();
     console.log(email);
@@ -28,7 +29,7 @@ export class UsersService {
     }
     return this.http.put<any>(`${this.apiUrl}/users`, { newName, email });
   }
-  getProfil() {
+  getProfile() {
     return this.http.get<any>(`${this.apiUrl}/users/profil`);
   }
 }

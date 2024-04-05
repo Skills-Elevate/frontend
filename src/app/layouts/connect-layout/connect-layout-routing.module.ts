@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConnectLayoutComponent } from './connect-layout.component';
 import { BlogComponent } from "../../pages/blog/blog.component";
-import {MyaccountComponent} from "../../pages/myaccount/myaccount.component";
+import {ProfileComponent} from "../../pages/profile/profile.component";
 import {CoursesComponent} from "../../pages/courses/courses.component";
 
 const routes: Routes = [
@@ -20,8 +20,8 @@ const routes: Routes = [
         component: CoursesComponent,
       },
       {
-        path: 'myaccount',
-        component: MyaccountComponent,
+        path: 'profile',
+        component: ProfileComponent,
       }
     ]
   }

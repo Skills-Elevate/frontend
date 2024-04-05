@@ -21,7 +21,7 @@ export class HeaderComponent {
     this.router.navigate(['/welcome']);
   }
 
-  myaccount() {
-    this.router.navigate(['/myaccount']);
+  profile() {
+    this.router.navigate(['/profile']);
   }
 }

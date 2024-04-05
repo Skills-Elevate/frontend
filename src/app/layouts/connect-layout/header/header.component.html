@@ -5,14 +5,14 @@
   <ul>
     <li><a href="">courses</a></li>
   </ul>
-  <div style="display: flex; gap: 15px;align-items: center;">
-    <div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
       <button (click)="profile()">Mon compte</button>
-    </div>
-
-    <button mat-fab class="logout" (click)="logout()">
-      <mat-icon>logout</mat-icon>
-      LogOut
-    </button>
+      <button mat-fab class="logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        LogOut
+      </button>
+    </mat-menu>
   </div>
 </mat-toolbar>

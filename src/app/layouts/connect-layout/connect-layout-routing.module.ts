@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConnectLayoutComponent } from './connect-layout.component';
-import { BlogComponent } from "../../pages/blog/blog.component";
-import {ProfileComponent} from "../../pages/profile/profile.component";
-import {CoursesComponent} from "../../pages/courses/courses.component";
+import { ProfileComponent } from "../../pages/profile/profile.component";
+import { CoursesComponent } from "../../pages/courses/courses.component";
+import { ChannelComponent } from '../../pages/channel/channel.component';
 
 const routes: Routes = [
   {
@@ -18,6 +18,10 @@ const routes: Routes = [
       {
         path: 'courses',
         component: CoursesComponent,
+      },
+      {
+        path: 'channel/:id',
+        component: ChannelComponent,
       },
       {
         path: 'profile',

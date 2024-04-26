@@ -1,0 +1,25 @@
+<div class="channel" *ngIf="channel">
+  <div class="channel-messages">
+    <div class="message-container" *ngFor="let message of channel.messages">
+      <div class="message"
+           [ngClass]="{
+          'current-user-message': message.authorName === channel.currentUserName,
+           'other-user-message': message.authorName !== channel.currentUserName
+        }"
+      >
+        <p>
+          {{ message.content }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-toolbar *ngIf="channel">
+  <div class="container">
+    <input [(ngModel)]="messageInput" placeholder="Type your message..." />
+    <button mat-fab class="button-send" (click)="sendMessage()">
+      <img class="button-send-icon" src="./assets/imgs/svgs/send-icon.svg" alt="send">
+    </button>
+  </div>
+</mat-toolbar>

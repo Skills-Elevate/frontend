@@ -25,8 +25,4 @@ export class ChannelsService {
   findOne(id: string): Observable<ChannelI> {
     return this.http.get<ChannelI>(`${this.apiUrl}/channels/${id}`);
   }
-
-  joinChannel(id: string): Observable<any> {
-    return this.http.patch(`${this.apiUrl}/channels/joinchannel/${id}`, {});
-  }
 }

@@ -20,6 +20,13 @@ body {
 
   --title-text-color: #333;
   --text-color: #555;
+
+  --padding-width: 2rem;
+  --padding-height: 2rem;
+
+  @media screen and (min-width: 890px) {
+    --padding-width: 8rem;
+  }
 }
 
 header, section {

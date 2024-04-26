@@ -1,0 +1,139 @@
+#channel-header {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  padding: var(--padding-height) var(--padding-width);
+  height: 100px;
+  background: var(--primary-color);
+}
+
+#channel-header .logo {
+  display: flex;
+  cursor: pointer;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#channel-header .logo img {
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 1.7rem;
+}
+
+
+#channel-header .logo p {
+  font-size: 1.5rem;
+}
+
+#channel-header button {
+  background: var(--primary-color);
+  color: var(--title-text-color);
+  cursor: pointer;
+  box-shadow: none;
+}
+
+#channel-header button:hover {
+  background: var(--dark-blue);
+}
+
+#channel-header .back img {
+  max-width: 80%;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.channel {
+  padding: 0 var(--padding-width);
+}
+
+.channel-messages {
+  padding: 2rem 0 100px 0;
+}
+
+.message-container {
+  display: flex;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.message-container img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1.5rem;
+}
+
+.message {
+  max-width: 70%;
+  padding: 15px 20px;
+  word-wrap: break-word;
+}
+
+.message.current-user-message {
+  border-radius: 1rem;
+  background: var(--dark-blue);
+  margin-left: auto;
+}
+
+.message.other-user-message {
+  border-radius: 1rem;
+  background: var(--primary-color);
+}
+
+.message p {
+  margin: 0;
+  color: var(--title-text-color);
+}
+
+mat-toolbar {
+  position: fixed;
+  bottom: 0;
+  padding: 0;
+  height: 90px;
+  background: var(--dark-blue);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  margin: auto;
+  padding: 0 var(--padding-width);
+}
+
+input {
+  flex: 1;
+  border: 2px solid var(--primary-color);
+  border-radius: 1rem;
+  padding: 0 2rem;
+  outline: none;
+  font-size: 1rem;
+  color: var(--primary-color);
+  background: var(--dark-blue);
+}
+
+input::placeholder {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.button-send {
+  border: none;
+  cursor: pointer;
+  border-radius: var(--padding-width);
+  background: var(--dark-blue);
+  box-shadow: none;
+}
+
+.button-send:hover {
+  background: var(--dark-blue);
+}
+
+.button-send-icon {
+  width: 2.5rem;
+  margin: 0 0 -0.5rem -0.5rem;
+}

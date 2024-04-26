@@ -18,6 +18,8 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { NgOptimizedImage } from '@angular/common';
+import { ChannelComponent } from './pages/channel/channel.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { NgOptimizedImage } from '@angular/common';
     NotFoundComponent,
     ProfileComponent,
     CoursesComponent,
+    ChannelComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { NgOptimizedImage } from '@angular/common';
     MatCardModule,
     MatButtonModule,
     NgOptimizedImage,
+    MatToolbarModule,
   ],
   providers: [
     {

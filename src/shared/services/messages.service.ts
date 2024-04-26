@@ -16,8 +16,11 @@ export class MessagesService {
     this.socket = io(environment.apiUrl);
   }
 
+  joinChannel(channelId: string): void {
+    this.socket.emit('joinChannel', channelId);
+  }
+
   newMessage(createMessageDto: CreateMessageDto): void {
-    console.log('New message:', createMessageDto);
     this.socket.emit('newMessage', createMessageDto);
   }
 
@@ -31,6 +34,6 @@ export class MessagesService {
 
   create(createMessageDto: CreateMessageDto): Observable<CreateMessageDto> {
     console.log(createMessageDto)
-    return this.http.post<any>(`${this.apiUrl}/messages`, createMessageDto);
+    return this.http.post<CreateMessageDto>(`${this.apiUrl}/messages`, createMessageDto);
   }
 }

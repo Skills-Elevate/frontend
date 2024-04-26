@@ -8,7 +8,7 @@
   <div>
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
     <mat-menu #menu="matMenu">
-      <button (click)="profile()">Mon compte</button>
+      <button mat-fab (click)="profile()">Mon compte</button>
       <button mat-fab class="logout" (click)="logout()">
         <mat-icon>logout</mat-icon>
         LogOut

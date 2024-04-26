@@ -18,8 +18,12 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { NgOptimizedImage } from '@angular/common';
+<<<<<<< Updated upstream
 import { ChannelComponent } from './pages/channel/channel.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+=======
+import { CourseComponent } from './pages/courses/course/course.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     NotFoundComponent,
     ProfileComponent,
     CoursesComponent,
+<<<<<<< Updated upstream
     ChannelComponent,
+=======
+    CourseComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

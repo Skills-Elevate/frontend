@@ -64,43 +64,13 @@
   </div>
 </section>
 
-<section class="cours-populaire">
-  <h1>Nos cours populaires</h1>
-
-  <section class="search-form">
-    <form (ngSubmit)="searchCourses()">
-      <input type="text" [(ngModel)]="searchTerm.name" name="name" placeholder="Rechercher par nom...">
-      <input type="text" [(ngModel)]="searchTerm.category" name="category" placeholder="Rechercher par catégorie...">
-      <button type="submit">Rechercher</button>
-    </form>
-  </section>
-
-
-  <div class="cours">
-    <div *ngFor="let course of courses" class="cours-card">
-      <div class="cours-card-img">
-        <img [src]="'data:image/jpeg;base64,' + course.imageUrl" alt="Description">
-      </div>
-      <div class="cours-info">
-        <div class="cours-author">
-          <img src="https://picsum.photos/30/30?random=1" alt="Auteur">
-          <p>{{ course.author }}</p>
-        </div>
-        <div class="cours-card-description-hr">
-          <hr>
-        </div>
-        <h4>{{ course.name }}</h4>
-        <div class="cours-card-description">
-          <div class="cours-card-description-price">
-            <p>{{ course.price }}</p>
-            <span class="material-symbols-outlined">euro</span>
-          </div>
-          <div class="cours-card-description-buy">
-            <a href="#">Acheter</a>
-          </div>
-        </div>
+<div class="cards">
+  <div *ngFor="let post of posts" class="card">
+    <div class="card-container">
+      <div class="card-description">
+        <h4>{{ post.title }}</h4>
+        <p>{{ post.content | slice:0:100 }}...</p>
       </div>
     </div>
   </div>
-</section>
-
+</div>

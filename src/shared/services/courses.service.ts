@@ -21,4 +21,8 @@ export class CoursesService {
   }
 
 
+  getCourseById(id: string): Observable<Course> {
+    return this.http.get<Course>(`${this.apiUrl}/courses/${id}`);
+  }
+
 }

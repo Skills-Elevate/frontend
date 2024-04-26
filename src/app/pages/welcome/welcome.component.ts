@@ -1,7 +1,8 @@
 import {Component, OnInit, inject, ChangeDetectorRef} from '@angular/core';
 import { Router } from '@angular/router';
-import {Course} from "../../../shared/models/course.module";
 import {CoursesService} from "../../../shared/services/courses.service";
+import {PostsService} from "../../../shared/services/posts.service";
+import {PostI} from "../../../shared/models/posts.module";
 
 @Component({
   selector: 'app-welcome',
@@ -9,26 +10,16 @@ import {CoursesService} from "../../../shared/services/courses.service";
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  courses: Course[] = [];
-  searchTerm = { name: '', category: '' };
+  posts: PostI[] = [];
   router = inject(Router);
 
-  constructor(private coursesService: CoursesService, private cdr: ChangeDetectorRef) { }
+  constructor(private postsService: PostsService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.coursesService.getCourses().subscribe(courses => {
-      this.courses = courses;
+    this.postsService.findAll().subscribe(posts =>{
+      this.posts = posts;
     });
   }
-
-  searchCourses() {
-    console.log("Envoi de la recherche avec :", this.searchTerm);
-    this.coursesService.getCoursesByQuery(this.searchTerm).subscribe(courses => {
-      this.courses = courses;
-    });
-  }
-
-
 
   goToLogin() {
     this.router.navigate(['/login']);

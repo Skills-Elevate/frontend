@@ -11,7 +11,7 @@ import { CoursesService } from '../../../../shared/services/courses.service';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent implements OnInit {
-  course$!: Observable<Course>; // Modifier pour correspondre au type retourné par getCourseById
+  course$!: Observable<Course>;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,4 +29,8 @@ export class CourseComponent implements OnInit {
       })
     );
   }
+  chatWithInstructor() {
+    alert('Commencer à discuter avec le professeur!');
+  }
+
 }

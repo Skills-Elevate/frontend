@@ -1,0 +1,41 @@
+.course-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.course-title {
+  font-size: 28px;
+  color: #333;
+}
+
+.course-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.course-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-top: 20px;
+}
+
+.chat-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  width: 200px;
+  margin: 30px auto 0;
+  text-align: center;
+}

@@ -1,5 +1,6 @@
-<div *ngIf="course$ | async as course">
-  <h1>{{ course.name }}</h1>
-  <img [src]="course.imageUrl" alt="Course image">
-  <p>{{ course.description }}</p>
+<div *ngIf="course$ | async as course" class="course-container">
+  <h1 class="course-title">{{ course.name }}</h1>
+  <img class="course-image" [src]="course.imageUrl" alt="Image du cours">
+  <p class="course-description">{{ course.description }}</p>
+  <button class="chat-button" (click)="chatWithInstructor()">Discuter avec le Professeur</button>
 </div>

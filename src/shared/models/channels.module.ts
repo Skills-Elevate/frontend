@@ -19,8 +19,10 @@ export interface ChannelMembership {
 export interface Message {
   content: string;
   createdAt: string;
-  authorName: string;
   channelId: string;
+  author: {
+    name: string;
+  };
 }
 
 export interface CreateChannelDto {

@@ -40,7 +40,6 @@ export class ChannelComponent implements OnInit, AfterViewChecked  {
     this.channelsService.findOne(channelId).subscribe({
       next: (data) => {
         this.channel = data;
-
         this.messagesService.joinChannel(channelId);
 
         this.messagesService.receiveMessages().subscribe((message) => {
@@ -76,9 +75,13 @@ export class ChannelComponent implements OnInit, AfterViewChecked  {
         const displayMessage = {
           content: response.content,
           createdAt: response.createdAt,
-          authorName: response.authorName,
+          author: {
+            name: this.channel.currentUserName,
+          },
           channelId: response.channelId,
         };
+
+        console.log(displayMessage)
 
         // Appeler la méthode du service pour afficher le nouveau message
         this.messagesService.newMessage(displayMessage);

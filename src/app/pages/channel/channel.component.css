@@ -74,13 +74,14 @@
 
 .message.current-user-message {
   border-radius: 1rem;
-  background: var(--dark-blue);
+  border: solid var(--dark-blue) 1px;
   margin-left: auto;
 }
 
 .message.other-user-message {
   border-radius: 1rem;
-  background: var(--primary-color);
+  border: solid var(--primary-color) 1px;
+  color: var(--dark-blue);
 }
 
 .message p {

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-import { Course } from '../../../../shared/models/course.module';
+import { map, switchMap, tap } from 'rxjs/operators';
 import { CoursesService } from '../../../../shared/services/courses.service';
+import { AuthService } from '../../../../shared/services/auth.service';
+import { Course } from "../../../../shared/models/course.module";
 
 @Component({
   selector: 'app-course',
@@ -12,10 +13,12 @@ import { CoursesService } from '../../../../shared/services/courses.service';
 })
 export class CourseComponent implements OnInit {
   course$!: Observable<Course>;
+  isCoach$!: Observable<boolean>;  // Utilisation de '!'
 
   constructor(
     private route: ActivatedRoute,
-    private coursesService: CoursesService
+    private coursesService: CoursesService,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -28,9 +31,17 @@ export class CourseComponent implements OnInit {
         return this.coursesService.getCourseById(courseId);
       })
     );
+
+    this.isCoach$ = this.authService.getUserRole().pipe(
+      map(role => role === 'Coach')
+    );
   }
+
+  goTo(courseId: string) {
+    console.log('Navigating to course:', courseId);
+  }
+
   chatWithInstructor() {
     alert('Commencer à discuter avec le professeur!');
   }
-
 }

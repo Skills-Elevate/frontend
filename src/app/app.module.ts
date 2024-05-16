@@ -21,6 +21,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { ChannelComponent } from './pages/channel/channel.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CourseComponent } from './pages/courses/course/course.component';
+import { EditComponent } from './pages/courses/course/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CourseComponent } from './pages/courses/course/course.component';
     CoursesComponent,
     ChannelComponent,
     CourseComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

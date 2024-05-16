@@ -19,10 +19,15 @@ export class CoursesService {
     console.log("Paramètres de recherche envoyés :", queryParams);
     return this.http.get<Course[]>(`${this.apiUrl}/courses`, { params: queryParams });
   }
-
-
+  getCoursesOnlyCoach(): Observable<Course[]> {
+    return this.http.get<Course[]>(`${this.apiUrl}/courses/my-courses`);
+  }
   getCourseById(id: string): Observable<Course> {
     return this.http.get<Course>(`${this.apiUrl}/courses/${id}`);
+  }
+
+  updateCourse(id: string | null | undefined, course: Course): Observable<Course> {
+    return this.http.put<Course>(`${this.apiUrl}/courses/${id}`, course);
   }
 
 }

@@ -6,4 +6,5 @@ export interface Course {
   imageUrl: string;
   author: string;
   createdAt: Date;
+  authorId: string;
 }

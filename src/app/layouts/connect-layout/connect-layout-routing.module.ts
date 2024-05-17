@@ -4,9 +4,10 @@ import { ConnectLayoutComponent } from './connect-layout.component';
 import { ProfileComponent } from "../../pages/profile/profile.component";
 import { CoursesComponent } from "../../pages/courses/courses.component";
 import { ChannelComponent } from '../../pages/channel/channel.component';
-import { CourseComponent } from 'src/app/pages/courses/course/course.component';
 import { BlogComponent } from "../../pages/blog/blog.component";
 import {EditComponent} from "../../pages/courses/course/edit/edit.component";
+import {AddCourseComponent} from "../../pages/courses/course/add-course/add-course.component";
+import {CourseComponent} from "../../pages/courses/course/course.component";
 
 
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path: 'course/edit/:id',
         component: EditComponent,
+      },
+      {
+        path: 'course/add',
+        component: AddCourseComponent,
       },
       {
         path: 'blog',

@@ -10,4 +10,9 @@
       <button *ngIf="!(isCoach$ | async)" mat-button (click)="joinCourse(course.id)">Rejoindre le cours</button>
     </mat-card-actions>
   </mat-card>
+  <div *ngIf="isCoach$ | async" class="floating-button">
+    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" (click)="addCourse()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
 </section>

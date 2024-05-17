@@ -22,6 +22,8 @@ import { ChannelComponent } from './pages/channel/channel.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CourseComponent } from './pages/courses/course/course.component';
 import { EditComponent } from './pages/courses/course/edit/edit.component';
+import {MatIconModule} from "@angular/material/icon";
+import {AddCourseComponent} from "./pages/courses/course/add-course/add-course.component";
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { EditComponent } from './pages/courses/course/edit/edit.component';
     ChannelComponent,
     CourseComponent,
     EditComponent,
+    AddCourseComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { EditComponent } from './pages/courses/course/edit/edit.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatCardModule,
+    MatIconModule,
     MatButtonModule,
     NgOptimizedImage,
     MatToolbarModule,

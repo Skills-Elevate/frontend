@@ -34,8 +34,10 @@ export class CoursesComponent implements OnInit {
   joinCourse(courseId: string) {
     this.router.navigate(['/course', courseId]);
   }
-
   editCourse(courseId: string) {
     this.router.navigate(['/course/edit', courseId]);
+  }
+  addCourse() {
+    this.router.navigate(['/course/add']);
   }
 }

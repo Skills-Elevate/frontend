@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { CoursesService } from '../../../../shared/services/courses.service';
 import { AuthService } from '../../../../shared/services/auth.service';
 import { Course } from "../../../../shared/models/course.module";
@@ -13,7 +13,7 @@ import { Course } from "../../../../shared/models/course.module";
 })
 export class CourseComponent implements OnInit {
   course$!: Observable<Course>;
-  isCoach$!: Observable<boolean>;  // Utilisation de '!'
+  isCoach$!: Observable<boolean>;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,9 +32,7 @@ export class CourseComponent implements OnInit {
       })
     );
 
-    this.isCoach$ = this.authService.getUserRole().pipe(
-      map(role => role === 'Coach')
-    );
+    this.isCoach$ = this.authService.isCoach();
   }
 
   goTo(courseId: string) {

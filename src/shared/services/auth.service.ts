@@ -51,4 +51,8 @@ export class AuthService {
     }
     return null;
   }
+
+  isCoach(): Observable<boolean> {
+    return this.http.get<boolean>(`${this.apiUrl}/users/is-coach`);
+  }
 }

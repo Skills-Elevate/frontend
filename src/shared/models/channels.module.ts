@@ -26,5 +26,6 @@ export interface Message {
 }
 
 export interface CreateChannelDto {
+  id: string;
   courseId: string;
 }

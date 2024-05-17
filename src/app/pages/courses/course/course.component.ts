@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { CoursesService } from '../../../../shared/services/courses.service';
 import { AuthService } from '../../../../shared/services/auth.service';
 import { Course } from "../../../../shared/models/course.module";
+import { ChannelsService } from '../../../../shared/services/channels.service';
 
 @Component({
   selector: 'app-course',
@@ -18,7 +19,9 @@ export class CourseComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private coursesService: CoursesService,
-    private authService: AuthService
+    private channelsService: ChannelsService,
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -28,6 +31,7 @@ export class CourseComponent implements OnInit {
         if (!courseId) {
           throw new Error('Course ID is required');
         }
+
         return this.coursesService.getCourseById(courseId);
       })
     );
@@ -36,6 +40,18 @@ export class CourseComponent implements OnInit {
   }
 
   joinCourseChannel(channelId: string | undefined) {
-    console.log(channelId);
+    if (channelId) {
+      this.router.navigateByUrl(`/channel/${channelId}`);
+    } else {
+      const courseId = this.route.snapshot.paramMap.get('id');
+      if (courseId) {
+        this.channelsService.create({ courseId: courseId ?? undefined }).subscribe((createdChannel) => {
+          const channelIdFromResponse = createdChannel.id;
+          if (channelIdFromResponse) {
+            this.router.navigateByUrl(`/channel/${channelIdFromResponse}`);
+          }
+        });
+      }
+    }
   }
 }

@@ -35,11 +35,7 @@ export class CourseComponent implements OnInit {
     this.isCoach$ = this.authService.isCoach();
   }
 
-  goTo(courseId: string) {
-    console.log('Navigating to course:', courseId);
-  }
-
-  chatWithInstructor() {
-    alert('Commencer à discuter avec le professeur!');
+  joinCourseChannel(channelId: string | undefined) {
+    console.log(channelId);
   }
 }

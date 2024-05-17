@@ -7,8 +7,11 @@ export interface Course {
   author: string;
   createdAt: Date;
   authorId: string;
-  channels: {
-    id: string,
-    name: string,
-  };
+  channels: Channel[];
+  firstChannelId?: string;
+}
+
+export interface Channel {
+  id: string,
+  name: string,
 }

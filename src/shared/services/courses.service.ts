@@ -15,13 +15,16 @@ export class CoursesService {
   getCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(`${this.apiUrl}/courses`);
   }
+
   getCoursesByQuery(queryParams: { name?: string; category?: string }): Observable<Course[]> {
     console.log("Paramètres de recherche envoyés :", queryParams);
     return this.http.get<Course[]>(`${this.apiUrl}/courses`, { params: queryParams });
   }
+
   getCoursesOnlyCoach(): Observable<Course[]> {
     return this.http.get<Course[]>(`${this.apiUrl}/courses/my_courses`);
   }
+
   getCourseById(id: string): Observable<Course> {
     return this.http.get<Course>(`${this.apiUrl}/courses/${id}`);
   }

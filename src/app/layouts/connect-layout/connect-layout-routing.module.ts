@@ -6,6 +6,7 @@ import { CoursesComponent } from "../../pages/courses/courses.component";
 import { ChannelComponent } from '../../pages/channel/channel.component';
 import { CourseComponent } from 'src/app/pages/courses/course/course.component';
 import { BlogComponent } from "../../pages/blog/blog.component";
+import {EditComponent} from "../../pages/courses/course/edit/edit.component";
 
 
 const routes: Routes = [
@@ -29,6 +30,10 @@ const routes: Routes = [
       {
         path: 'course/:id',
         component: CourseComponent,
+      },
+      {
+        path: 'course/edit/:id',
+        component: EditComponent,
       },
       {
         path: 'blog',

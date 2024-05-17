@@ -37,7 +37,7 @@ const routes: Routes = [
         component: EditComponent,
       },
       {
-        path: 'course/add',
+        path: 'courseadd',
         component: AddCourseComponent,
       },
       {

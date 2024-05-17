@@ -6,4 +6,8 @@ export interface Course {
   imageUrl: string;
   author: string;
   createdAt: Date;
+  channels: {
+    id: string,
+    name: string,
+  };
 }

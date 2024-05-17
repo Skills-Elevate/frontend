@@ -15,14 +15,13 @@ export class CoursesService {
   getCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(`${this.apiUrl}/courses`);
   }
+
   getCoursesByQuery(queryParams: { name?: string; category?: string }): Observable<Course[]> {
     console.log("Paramètres de recherche envoyés :", queryParams);
     return this.http.get<Course[]>(`${this.apiUrl}/courses`, { params: queryParams });
   }
 
-
   getCourseById(id: string): Observable<Course> {
     return this.http.get<Course>(`${this.apiUrl}/courses/${id}`);
   }
-
 }

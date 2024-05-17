@@ -12,8 +12,8 @@ export class ChannelsService {
 
   constructor(private http: HttpClient) {}
 
-  create(createUserDto: CreateChannelDto): Observable<CreateChannelDto> {
-    return this.http.post<CreateChannelDto>(`${this.apiUrl}/channels`, createUserDto);
+  create(createChannelDto: { courseId: string | undefined }): Observable<CreateChannelDto> {
+    return this.http.post<CreateChannelDto>(`${this.apiUrl}/channels`, createChannelDto);
   }
 
   findAll(acceptedAccess: boolean): Observable<ChannelI[]> {

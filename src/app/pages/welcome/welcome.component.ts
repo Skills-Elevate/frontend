@@ -10,15 +10,12 @@ import {PostI} from "../../../shared/models/posts.module";
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  posts: PostI[] = [];
   router = inject(Router);
 
   constructor(private postsService: PostsService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.postsService.findAll().subscribe(posts =>{
-      this.posts = posts;
-    });
+
   }
 
   goToLogin() {

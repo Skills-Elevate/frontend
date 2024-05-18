@@ -1,4 +1,4 @@
-section {
+.courses-section {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -6,29 +6,35 @@ section {
   justify-content: center;
 }
 
-mat-card {
+.course-card {
   flex: 0 0 auto;
-  max-width: 300px;
-  margin-top: 2rem;
+  max-width: 350px;
+  margin: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-mat-card, img, mat-card-content {
-  border-radius: 2rem 2rem 0 0;
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-mat-card-content {
-  margin-top: -2rem;
+.course-card img {
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  height: auto;
 }
 
-mat-card-content, mat-card-actions {
-  padding: 0 1.5rem;
-  background: #fff;
+.course-card-content {
+  padding: 1rem;
 }
 
-mat-card-actions {
+.course-card-actions {
+  padding: 0.5rem 1rem;
   display: flex;
-  justify-content: end;
-  gap: 2rem;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .floating-button {
@@ -41,8 +47,4 @@ mat-card-actions {
 .floating-button button {
   width: 50px;
   height: 50px;
-}
-
-.example-card {
-  margin-bottom: 20px;
 }

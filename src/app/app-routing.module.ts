@@ -5,6 +5,7 @@ import { AuthGuard } from "../shared/guards/auth.guard";
 import { NotFoundComponent } from "./pages/not-found/not-found.component";
 
 const routes: Routes = [
+  /*
   {
     path: '',
     canActivate: [AuthGuard],
@@ -14,6 +15,11 @@ const routes: Routes = [
     path: '',
     canActivate: [UsersGuard],
     loadChildren: () => import('./layouts/public-layout/public-layout.module').then((m) => m.PublicLayoutModule)
+  },
+   */
+  {
+    path: '',
+    loadChildren: () => import('./layouts/connect-layout/connect-layout.module').then((m) => m.ConnectLayoutModule)
   },
   {
     path: '**',

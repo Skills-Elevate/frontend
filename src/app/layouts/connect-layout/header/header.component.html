@@ -1,18 +1,26 @@
-<mat-toolbar id="connect-header">
+<mat-toolbar id="header" id="connect-header">
   <div class="logo" (click)="goToHome()">
     <img src="assets/imgs/logo.png" alt="logo" />
   </div>
-  <ul>
-    <li><a href="">courses</a></li>
-  </ul>
-  <div>
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-      <button mat-fab (click)="profile()">Mon compte</button>
-      <button mat-fab class="logout" (click)="logout()">
-        <mat-icon>logout</mat-icon>
-        LogOut
-      </button>
-    </mat-menu>
+  <div *ngIf="isLoggedIn; else publicLinks">
+    <ul>
+      <li><a href="/courses">courses</a></li>
+    </ul>
+    <div>
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-fab (click)="profile()">Mon compte</button>
+        <button mat-fab class="logout" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          LogOut
+        </button>
+      </mat-menu>
+    </div>
   </div>
+  <ng-template #publicLinks>
+    <button mat-fab class="logout" (click)="goToLogin()">
+      <mat-icon>logout</mat-icon>
+      Login/Sign Up
+    </button>
+  </ng-template>
 </mat-toolbar>

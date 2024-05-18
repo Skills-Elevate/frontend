@@ -1,5 +1,5 @@
-<section>
-  <mat-card class="example-card" *ngFor="let course of courses$ | async">
+<section class="courses-section">
+  <mat-card class="course-card" *ngFor="let course of courses$ | async">
     <img src="{{ course.imageUrl || 'https://picsum.photos/200/300' }}" alt="Image de cours">
     <mat-card-content>
       <h2>{{ course.name }}</h2>

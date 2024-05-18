@@ -1,27 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsersService } from '../../../../shared/services/users.service';
-import { JwtService } from '../../../../shared/services/jwt.service';
+import {AuthService} from "../../../../shared/services/auth.service";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  isLoggedIn: boolean = false;
 
-  constructor(private JwtService: JwtService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private cdRef: ChangeDetectorRef,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.authService.isLoggedIn().subscribe(status => {
+      this.isLoggedIn = status;
+      this.cdRef.detectChanges();
+    });
+  }
 
   goToHome() {
     this.router.navigate(['/']);
   }
 
+  profile() {
+    this.router.navigate(['/profile']);
+  }
+
   logout() {
-    this.JwtService.clearTokens();
+    this.authService.logout();
+    this.cdRef.detectChanges();
     this.router.navigate(['/welcome']);
   }
 
-  profile() {
-    this.router.navigate(['/profile']);
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 }

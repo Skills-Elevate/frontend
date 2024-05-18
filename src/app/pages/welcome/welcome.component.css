@@ -1,253 +1,69 @@
-.header {
-  background: var(--dark-blue);
-}
-
-.header .container {
-  max-width: 500px;
-  width: 100%;
-  padding: 3.5rem 0;
-}
-
-.header .container h1 {
-  text-align: start;
-  color: var(--primary-color);
-}
-
-p {
-  color: var(--text-color);
-
-}
-
-.header .container button {
-  width: 150px;
-  padding: 15px 15px;
-  border: 1px solid var(--text-color);
-  border-radius: 25px;
-  background: var(--secondary-color);
-  color: var(--primary-color);
-  cursor: pointer;
-}
-
-.header .container button:hover {
-  background: var(--dark-blue);
-}
-
 .welcome .title {
   text-align: center;
-  margin-bottom: 2rem;
+  padding: 2rem;
+  background: var(--background-dark);
 }
 
 .welcome .title h1 {
-  font-weight: bold;
-  font-size: 2.20rem;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
   color: var(--dark-blue);
 }
 
 .welcome .title p {
-  text-align: center;
+  font-size: 1.2rem;
   color: var(--dark-blue);
 }
 
 .welcome .cards {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .welcome .cards .card {
-  width: 250px;
-  height: 200px;
+  width: 280px;
+  padding: 1rem;
+  background: white;
   border-radius: 15px;
-  border: solid 1px black;
-  text-align: center;
-  box-shadow: 0px 1px 5px var(--dark-blue);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.welcome .cards .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .welcome .cards .card .card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: -webkit-fill-available;
-  height: -webkit-fill-available;
-  justify-content: center;
+  text-align: center;
 }
 
-.welcome .cards .card .card-container .rounded-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.welcome .cards .card .rounded-img {
   width: 70px;
   height: 70px;
-  border-radius: 100%;
+  border-radius: 50%;
   background-color: var(--dark-blue);
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
 }
 
-.welcome .cards .card .card-container .rounded-img .material-symbols-outlined {
+.welcome .cards .card .rounded-img .material-symbols-outlined {
   color: var(--primary-color);
   font-size: 2.5rem;
 }
 
-.welcome .cards .card .card-container .card-description h4 {
-  font-size: .90rem;
-  font-weight: bold;
-  line-height: 1.50;
-  margin: 5px;
+.welcome .cards .card .card-description h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
   color: var(--dark-blue);
 }
 
-.welcome .cards .card .card-container .card-description p {
-  text-align: center;
-  font-size: .75rem;
-  line-height: 1.30;
-  margin: 0;
+.welcome .cards .card .card-description p {
+  font-size: 0.9rem;
   color: var(--text-color);
 }
-
-.cours-populaire h1 {
-  font-weight: bold;
-  font-size: 2.20rem;
-  text-align: center;
-  color: var(--dark-blue);
-}
-
-.cours-populaire .filtres {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 20px 0;
-}
-
-.cours-populaire .filtre {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
-  padding: 0 10px;
-  border: 1px solid var(--text-color);
-  border-radius: 10px;
-  transition: box-shadow 0.3s ease;
-}
-
-.cours-populaire .filtre input[type="text"]:focus {
-  outline: none;
-  box-shadow: 0 0 5px transparent;
-}
-
-.cours-populaire .filtre input[type="text"] {
-  border: none;
-  padding: 12px;
-  background-color: transparent;
-}
-
-.cours-populaire input[type="button"] {
-  border: none;
-  padding: 12px 24px;
-  border-radius: 10px;
-  background-color: var(--secondary-color);
-  transition: background-color 0.3s;
-}
-
-.cours-populaire input[type="button"]:hover {
-  cursor: pointer;
-  background-color: var(--secondary-color-hover);
-}
-
-.cours {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.cours-card {
-  width: 300px;
-  border-radius: 15px;
-  border: solid 1px black;
-  text-align: center;
-}
-
-.cours-author {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
-  justify-content: flex-start;
-  margin: 10px 0 10px 8px;
-}
-
-.cours-author img {
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-}
-
-.cours-card-img {
-  margin: 8px 8px;
-  border-radius: 7px;
-  overflow: hidden;
-  height: 150px;
-}
-
-.cours-card-img img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.cours-card-description-hr {
-  display: flex;
-  justify-content: center;
-}
-
-.cours-card-description-hr hr {
-  margin: 0;
-  border: 1px solid black;
-  width: 90%;
-}
-
-.cours-card-description {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px 8px;
-}
-
-.cours-card-description-price {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  color: var(--dark-orange);
-}
-
-.cours-card-description-price p {
-  color: var(--dark-orange);
-}
-.cours-card-description-price span.material-symbols-outlined {
-  font-size: 19px;
-}
-
-.cours-card-description-buy {
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 13px;
-}
-
-.cours-card-description-buy a {
-  color: var(--dark-blue);
-  text-decoration: none;
-}
-
-.cours-info h4 {
-  margin-top: 20px;
-  margin-left: 8px;
-  font-size: 25px;
-  text-align: start;
-}
-

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, BehaviorSubject, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '../environments/environment.dev';
 import { AuthLoginDto } from '../models/users.module';
@@ -12,12 +12,19 @@ import { jwtDecode } from 'jwt-decode';
 })
 export class AuthService {
   private apiUrl = environment.apiUrl;
+  private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
 
   constructor(private http: HttpClient, private JwtService: JwtService) {}
 
   login(credentials: AuthLoginDto): Observable<any> {
     console.log('Credentials in login:', credentials);
-    return this.http.post<any>(`${this.apiUrl}/auth`, credentials);
+    return this.http.post<any>(`${this.apiUrl}/auth`, credentials).pipe(
+      map(response => {
+        this.handleLoginResponse(response);
+        this.loggedIn.next(true);  // Update loggedIn status
+        return response;
+      })
+    );
   }
 
   handleLoginResponse(response: any): void {
@@ -54,5 +61,18 @@ export class AuthService {
 
   isCoach(): Observable<boolean> {
     return this.http.get<boolean>(`${this.apiUrl}/users/is-coach`);
+  }
+
+  logout(): void {
+    this.JwtService.clearTokens();
+    this.loggedIn.next(false);
+  }
+
+  isLoggedIn(): Observable<boolean> {
+    return this.loggedIn.asObservable();
+  }
+
+  private hasToken(): boolean {
+    return !!this.JwtService.getAccessToken();
   }
 }

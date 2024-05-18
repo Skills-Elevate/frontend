@@ -3,10 +3,11 @@ import { ConnectLayoutRoutingModule} from "./connect-layout-routing.module";
 import { ConnectLayoutComponent } from './connect-layout.component';
 import { RouterModule } from '@angular/router';
 import { HeaderModule } from './header/header.module';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [ConnectLayoutComponent],
 
-  imports: [ConnectLayoutRoutingModule, RouterModule, HeaderModule],
+  imports: [CommonModule, ConnectLayoutRoutingModule, RouterModule, HeaderModule],
 })
 export class ConnectLayoutModule {}

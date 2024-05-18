@@ -8,18 +8,25 @@ import { BlogComponent } from "../../pages/blog/blog.component";
 import {EditComponent} from "../../pages/courses/course/edit/edit.component";
 import {AddCourseComponent} from "../../pages/courses/course/add-course/add-course.component";
 import {CourseComponent} from "../../pages/courses/course/course.component";
+import {LoginComponent} from "../../pages/auth/login/login.component";
+import {RegisterComponent} from "../../pages/auth/register/register.component";
+import {WelcomeComponent} from "../../pages/welcome/welcome.component";
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'courses',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
     path: '',
     component: ConnectLayoutComponent,
     children: [
+      {
+        path: 'welcome',
+        component: WelcomeComponent
+      },
       {
         path: 'courses',
         component: CoursesComponent,
@@ -47,7 +54,15 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent,
-      }
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+      },
     ]
   }
 ];

@@ -1,3 +1,48 @@
+.section-title {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 2.5rem;
+  color: var(--dark-blue);
+  animation: fadeInDown 1s ease-out;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.search-container input[type="text"] {
+  padding: 10px 20px;
+  width: 300px;
+  border: 2px solid var(--dark-blue);
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-container input[type="text"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-container button {
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-container button:hover {
+  background-color: var(--button-hover);
+}
+
 .courses-section {
   display: flex;
   flex-wrap: wrap;
@@ -8,16 +53,16 @@
 
 .course-card {
   flex: 0 0 auto;
-  max-width: 350px;
-  margin: 1rem;
+  max-width: 300px;
+  margin-top: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--card-shadow);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .course-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--card-shadow);
 }
 
 .course-card img {
@@ -26,15 +71,41 @@
   height: auto;
 }
 
-.course-card-content {
+.course-card mat-card-content {
   padding: 1rem;
 }
 
-.course-card-actions {
-  padding: 0.5rem 1rem;
+.course-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-blue);
+}
+
+.course-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.course-card mat-card-actions {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.course-card button {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.course-card button:hover {
+  background: var(--button-hover);
 }
 
 .floating-button {
@@ -47,4 +118,15 @@
 .floating-button button {
   width: 50px;
   height: 50px;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

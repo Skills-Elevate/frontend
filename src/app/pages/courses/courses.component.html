@@ -1,5 +1,9 @@
+<h1 *ngIf="isCoach$ | async" class="section-title">Mes Cours</h1>
+<div class="search-container">
+  <input type="text" placeholder="Rechercher un cours..." [formControl]="searchQuery">
+</div>
 <section class="courses-section">
-  <mat-card class="course-card" *ngFor="let course of courses$ | async">
+  <mat-card class="course-card" *ngFor="let course of filteredCourses$ | async">
     <img src="{{ course.imageUrl || 'https://picsum.photos/200/300' }}" alt="Image de cours">
     <mat-card-content>
       <h2>{{ course.name }}</h2>
@@ -11,7 +15,7 @@
     </mat-card-actions>
   </mat-card>
   <div *ngIf="isCoach$ | async" class="floating-button">
-    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" (click)="addCourse()">
+    <button mat-mini-fab color="warn" aria-label="Ajouter un cours" (click)="addCourse()">
       <mat-icon>add</mat-icon>
     </button>
   </div>

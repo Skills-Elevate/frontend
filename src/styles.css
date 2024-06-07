@@ -24,6 +24,8 @@ body {
   --padding-width: 2rem;
   --padding-height: 2rem;
 
+  --card-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
   @media screen and (min-width: 890px) {
     --padding-width: 8rem;
   }

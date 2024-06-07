@@ -24,6 +24,19 @@ mat-icon {
   color: var(--primary-color);
 }
 
+.pages-buttons {
+  display: flex;
+  justify-content: end;
+  padding: 2rem;
+  width: 100%;
+  gap: 1rem
+}
+
+.pages-buttons button {
+  color: var(--primary-color);
+  background: var(--secondary-color);
+}
+
 .drawer-container {
   height: 100%;
   background: var(--dark-blue);
@@ -58,7 +71,7 @@ mat-icon {
   align-items: stretch;
 }
 
-.button-link {
+.drawer-container button {
   color: var(--primary-color) !important;
   background: var(--dark-blue) !important;
   font-size: 1.5rem;

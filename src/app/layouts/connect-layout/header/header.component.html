@@ -9,9 +9,6 @@
   <div class="pages-buttons" *ngIf="isDesktop">
     <button mat-flat-button (click)="goToHome()">Home</button>
     <button mat-flat-button (click)="gotToCourse()">Course</button>
-  </div>
-
-  <div class="profile-buttons" *ngIf="isDesktop">
     <button mat-flat-button (click)="goToProfile()" *ngIf="isLoggedIn">Profile</button>
     <button mat-flat-button (click)="logout()" *ngIf="isLoggedIn">Logout</button>
     <button mat-flat-button (click)="goToLogin()" *ngIf="!isLoggedIn">Login</button>

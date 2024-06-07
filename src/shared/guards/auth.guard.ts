@@ -16,7 +16,7 @@ export class AuthGuard {
     const url = state.url;
 
     if (!this.JwtService.getAccessToken()) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
       return false;
     }
     return true;

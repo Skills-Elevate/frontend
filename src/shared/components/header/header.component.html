@@ -1,6 +1,6 @@
 <mat-toolbar>
   <div class="logo" (click)="goToHome()" *ngIf="isDesktop">
-    <img src="assets/imgs/logo.png" alt="logo" />
+    <img src="../../../assets/imgs/logo.png" alt="logo" />
   </div>
   <button mat-icon-button class="menu" (click)="toggleMenu()" *ngIf="!isDesktop">
     <mat-icon>menu</mat-icon>
@@ -8,7 +8,7 @@
 
   <div class="pages-buttons" *ngIf="isDesktop">
     <button mat-flat-button (click)="goToHome()">Home</button>
-    <button mat-flat-button (click)="gotToCourse()">Course</button>
+    <button mat-flat-button (click)="gotToCourse()" *ngIf="isLoggedIn">Course</button>
     <button mat-flat-button (click)="goToProfile()" *ngIf="isLoggedIn">Profile</button>
     <button mat-flat-button (click)="logout()" *ngIf="isLoggedIn">Logout</button>
     <button mat-flat-button (click)="goToLogin()" *ngIf="!isLoggedIn">Login</button>
@@ -19,7 +19,7 @@
   <div *ngIf="!isDesktop" class="drawer">
     <div class="button-container">
       <button mat-flat-button class="button-link" (click)="goToHome()">HOME</button>
-      <button mat-flat-button class="button-link" (click)="gotToCourse()">COURSE</button>
+      <button mat-flat-button class="button-link" (click)="gotToCourse()" *ngIf="isLoggedIn">COURSE</button>
       <button mat-flat-button class="button-link" (click)="goToProfile()" *ngIf="isLoggedIn">PROFILE</button>
       <button mat-flat-button class="button-link" (click)="logout()" *ngIf="isLoggedIn">LOGOUT</button>
       <button mat-flat-button class="button-link" (click)="goToLogin()" *ngIf="!isLoggedIn">LOGIN</button>

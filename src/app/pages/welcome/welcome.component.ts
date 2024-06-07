@@ -1,8 +1,5 @@
-import {Component, OnInit, inject, ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {CoursesService} from "../../../shared/services/courses.service";
-import {PostsService} from "../../../shared/services/posts.service";
-import {PostI} from "../../../shared/models/posts.module";
 
 @Component({
   selector: 'app-welcome',
@@ -10,13 +7,12 @@ import {PostI} from "../../../shared/models/posts.module";
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  router = inject(Router);
 
-  constructor(private postsService: PostsService, private cdr: ChangeDetectorRef) { }
+  constructor(
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   goToLogin() {
     this.router.navigate(['/login']);

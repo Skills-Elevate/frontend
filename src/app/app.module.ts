@@ -8,7 +8,7 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { environment } from '../shared/environments/environment.dev';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from '../shared/interceptors/jwt.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,8 +22,9 @@ import { ChannelComponent } from './pages/channel/channel.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CourseComponent } from './pages/courses/course/course.component';
 import { EditComponent } from './pages/courses/course/edit/edit.component';
-import {MatIconModule} from "@angular/material/icon";
-import {AddCourseComponent} from "./pages/courses/course/add-course/add-course.component";
+import { MatIconModule } from "@angular/material/icon";
+import { AddCourseComponent } from "./pages/courses/course/add-course/add-course.component";
+import { HeaderModule } from '../shared/components/header/header.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import {AddCourseComponent} from "./pages/courses/course/add-course/add-course.c
     ChannelComponent,
     CourseComponent,
     EditComponent,
-    AddCourseComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +57,7 @@ import {AddCourseComponent} from "./pages/courses/course/add-course/add-course.c
     MatButtonModule,
     NgOptimizedImage,
     MatToolbarModule,
+    HeaderModule
   ],
   providers: [
     {

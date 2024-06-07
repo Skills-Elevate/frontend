@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
-import {AuthService} from "../../../../shared/services/auth.service";
+import { AuthService } from "../../services/auth.service";
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit {
     this.toggleMenu(); // Ferme le menu
     this.authService.logout();
     this.cdRef.detectChanges();
-    this.router.navigate(['/welcome']);
+    this.router.navigate(['/']);
   }
 
   goToLogin() {

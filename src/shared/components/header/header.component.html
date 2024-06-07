@@ -7,11 +7,23 @@
   </button>
 
   <div class="pages-buttons" *ngIf="isDesktop">
-    <button mat-flat-button (click)="goToHome()">Home</button>
-    <button mat-flat-button (click)="gotToCourse()" *ngIf="isLoggedIn">Course</button>
-    <button mat-flat-button (click)="goToProfile()" *ngIf="isLoggedIn">Profile</button>
-    <button mat-flat-button (click)="logout()" *ngIf="isLoggedIn">Logout</button>
-    <button mat-flat-button (click)="goToLogin()" *ngIf="!isLoggedIn">Login</button>
+    <ul>
+      <li (click)="goToHome()">
+        <span>Home</span>
+      </li>
+      <li (click)="gotToCourse()" *ngIf="isLoggedIn">
+        <span>Course</span>
+      </li>
+      <li (click)="goToProfile()" *ngIf="isLoggedIn">
+        <span>Profile</span>
+      </li>
+      <li>
+        <button mat-flat-button (click)="logout()" *ngIf="isLoggedIn">Logout</button>
+      </li>
+      <li>
+        <button mat-flat-button (click)="goToLogin()" *ngIf="!isLoggedIn">Login</button>
+      </li>
+    </ul>
   </div>
 </mat-toolbar>
 

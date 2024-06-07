@@ -17,7 +17,7 @@ mat-toolbar {
 }
 
 .menu, mat-icon {
-  transform:scale(1.5);
+  transform: scale(1.5);
 }
 
 mat-icon {
@@ -26,13 +26,30 @@ mat-icon {
 
 .pages-buttons {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 2rem;
   width: 100%;
-  gap: 1rem
 }
 
-.pages-buttons button {
+.pages-buttons ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem; /* Utilisation de gap pour l'espacement */
+}
+
+.pages-buttons li {
+  display: flex;
+  align-items: center;
+}
+
+.pages-buttons li span, .pages-buttons li button {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.pages-buttons li button {
   color: var(--primary-color);
   background: var(--secondary-color);
 }

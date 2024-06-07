@@ -1,26 +1,40 @@
-<mat-toolbar id="header" id="connect-header">
-  <div class="logo" (click)="goToHome()">
+<mat-toolbar>
+  <div class="logo" (click)="goToHome()" *ngIf="isDesktop">
     <img src="assets/imgs/logo.png" alt="logo" />
   </div>
-  <div *ngIf="isLoggedIn; else publicLinks">
-    <ul>
-      <li><a href="/courses">courses</a></li>
-    </ul>
-    <div>
-      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-      <mat-menu #menu="matMenu">
-        <button mat-fab (click)="profile()">Mon compte</button>
-        <button mat-fab class="logout" (click)="logout()">
-          <mat-icon>logout</mat-icon>
-          LogOut
-        </button>
-      </mat-menu>
+  <button mat-icon-button class="menu" (click)="toggleMenu()" *ngIf="!isDesktop">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="pages-buttons" *ngIf="isDesktop">
+    <button mat-flat-button (click)="goToHome()">Home</button>
+    <button mat-flat-button (click)="gotToCourse()">Course</button>
+  </div>
+
+  <div class="profile-buttons" *ngIf="isDesktop">
+    <button mat-flat-button (click)="goToProfile()" *ngIf="isLoggedIn">Profile</button>
+    <button mat-flat-button (click)="logout()" *ngIf="isLoggedIn">Logout</button>
+    <button mat-flat-button (click)="goToLogin()" *ngIf="!isLoggedIn">Login</button>
+  </div>
+</mat-toolbar>
+
+<div class="drawer-container" *ngIf="showMenu">
+  <div *ngIf="!isDesktop" class="drawer">
+    <div class="button-container">
+      <button mat-flat-button class="button-link" (click)="goToHome()">HOME</button>
+      <button mat-flat-button class="button-link" (click)="gotToCourse()">COURSE</button>
+      <button mat-flat-button class="button-link" (click)="goToProfile()" *ngIf="isLoggedIn">PROFILE</button>
+      <button mat-flat-button class="button-link" (click)="logout()" *ngIf="isLoggedIn">LOGOUT</button>
+      <button mat-flat-button class="button-link" (click)="goToLogin()" *ngIf="!isLoggedIn">LOGIN</button>
     </div>
   </div>
-  <ng-template #publicLinks>
-    <button mat-fab class="logout" (click)="goToLogin()">
-      <mat-icon>logout</mat-icon>
-      Login/Sign Up
-    </button>
-  </ng-template>
-</mat-toolbar>
+</div>
+
+
+
+
+
+
+
+
+

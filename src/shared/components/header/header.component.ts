@@ -63,4 +63,9 @@ export class HeaderComponent implements OnInit {
     this.toggleMenu(); // Ferme le menu
     this.router.navigate(['/login']);
   }
+
+  goToRegister() {
+    this.toggleMenu(); // Ferme le menu
+    this.router.navigate(['/register']);
+  }
 }

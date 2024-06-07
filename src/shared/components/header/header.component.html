@@ -8,20 +8,20 @@
 
   <div class="pages-buttons" *ngIf="isDesktop">
     <ul>
-      <li (click)="goToHome()">
-        <span>Home</span>
-      </li>
       <li (click)="gotToCourse()" *ngIf="isLoggedIn">
         <span>Course</span>
       </li>
       <li (click)="goToProfile()" *ngIf="isLoggedIn">
         <span>Profile</span>
       </li>
-      <li>
-        <button mat-flat-button (click)="logout()" *ngIf="isLoggedIn">Logout</button>
+      <li (click)="goToLogin()" *ngIf="!isLoggedIn">
+        <span>Se connecter</span>
       </li>
-      <li>
-        <button mat-flat-button (click)="goToLogin()" *ngIf="!isLoggedIn">Login</button>
+      <li (click)="goToRegister()" *ngIf="!isLoggedIn">
+        <button mat-flat-button>S'inscrire</button>
+      </li>
+      <li (click)="logout()" *ngIf="isLoggedIn">
+        <button mat-flat-button>Se deconnecter</button>
       </li>
     </ul>
   </div>
@@ -30,11 +30,12 @@
 <div class="drawer-container" *ngIf="showMenu">
   <div *ngIf="!isDesktop" class="drawer">
     <div class="button-container">
-      <button mat-flat-button class="button-link" (click)="goToHome()">HOME</button>
-      <button mat-flat-button class="button-link" (click)="gotToCourse()" *ngIf="isLoggedIn">COURSE</button>
-      <button mat-flat-button class="button-link" (click)="goToProfile()" *ngIf="isLoggedIn">PROFILE</button>
-      <button mat-flat-button class="button-link" (click)="logout()" *ngIf="isLoggedIn">LOGOUT</button>
-      <button mat-flat-button class="button-link" (click)="goToLogin()" *ngIf="!isLoggedIn">LOGIN</button>
+      <button mat-flat-button class="button-link" (click)="goToHome()">Home</button>
+      <button mat-flat-button class="button-link" (click)="gotToCourse()" *ngIf="isLoggedIn">Course</button>
+      <button mat-flat-button class="button-link" (click)="goToProfile()" *ngIf="isLoggedIn">Profile</button>
+      <button mat-flat-button (click)="goToRegister()" *ngIf="!isLoggedIn">S'inscrire</button>
+      <button mat-flat-button class="button-link" (click)="goToLogin()" *ngIf="!isLoggedIn">Se connecter</button>
+      <button mat-flat-button class="button-link" (click)="logout()" *ngIf="isLoggedIn">Logout</button>
     </div>
   </div>
 </div>

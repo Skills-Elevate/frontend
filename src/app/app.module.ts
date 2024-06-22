@@ -25,6 +25,7 @@ import { EditComponent } from './pages/courses/course/edit/edit.component';
 import { MatIconModule } from "@angular/material/icon";
 import { AddCourseComponent } from "./pages/courses/course/add-course/add-course.component";
 import { HeaderModule } from '../shared/components/header/header.module';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HeaderModule } from '../shared/components/header/header.module';
     ChannelComponent,
     CourseComponent,
     EditComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

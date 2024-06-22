@@ -2,17 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, from } from 'rxjs';
 import { catchError, switchMap, finalize } from 'rxjs/operators';
-import { Router } from "@angular/router";
-import { JwtService } from "../services/jwt.service";
+import { Router } from '@angular/router';
+import { JwtService } from '../services/jwt.service';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
   private refreshing = false;
 
-  constructor(private JwtService: JwtService, private router: Router) {}
+  constructor(private jwtService: JwtService, private router: Router) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const token = this.JwtService.getAccessToken();
+    const token = this.jwtService.getAccessToken();
 
     if (token) {
       request = this.addToken(request, token);
@@ -29,14 +29,14 @@ export class JwtInterceptor implements HttpInterceptor {
 
   private handle401Error(request: HttpRequest<any>, next: HttpHandler, error: any) {
     if (error instanceof HttpErrorResponse && error.status === 401) {
-      const refreshToken = this.JwtService.getRefreshAccessToken();
+      const refreshToken = this.jwtService.getRefreshAccessToken();
 
       if (refreshToken && !this.refreshing) {
         this.refreshing = true;
 
-        return from(this.JwtService.refreshAccessToken(refreshToken)).pipe(
+        return from(this.jwtService.refreshAccessToken()).pipe(
           switchMap((refreshResponse) => {
-            this.JwtService.setAccessToken(refreshResponse.access_token);
+            this.jwtService.setAccessToken(refreshResponse.access_token);
 
             const newRequest = this.addToken(request, refreshResponse.access_token);
 
@@ -56,7 +56,7 @@ export class JwtInterceptor implements HttpInterceptor {
   }
 
   private handleTokenError() {
-    this.JwtService.clearTokens();
+    this.jwtService.clearTokens();
     this.router.navigate(['/login']);
   }
 

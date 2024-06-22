@@ -1,1 +1,38 @@
-<h1>Welcome to the admin panel</h1>
+<div class="dashboard">
+  <h1 class="dashboard-title">Admin Dashboard</h1>
+  <div class="cards-container">
+    <mat-card class="card">
+      <mat-icon class="card-icon">people</mat-icon>
+      <mat-card-content class="card-content">
+        <h2>Users</h2>
+        <p>{{ userCount }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card">
+      <mat-icon class="card-icon">school</mat-icon>
+      <mat-card-content class="card-content">
+        <h2>Courses</h2>
+        <p>{{ courseCount }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card">
+      <mat-icon class="card-icon">article</mat-icon>
+      <mat-card-content class="card-content">
+        <h2>Blogs</h2>
+        <p>{{ blogCount }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <mat-card class="chart-container">
+    <h2 class="chart-title">Statistics</h2>
+    <div class="chart-wrapper">
+      <canvas baseChart
+              [data]="{ labels: barChartLabels, datasets: barChartData }"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [type]="barChartType"
+              [plugins]="barChartPlugins">
+      </canvas>
+    </div>
+  </mat-card>
+</div>

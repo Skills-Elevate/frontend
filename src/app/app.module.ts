@@ -26,6 +26,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { AddCourseComponent } from "./pages/courses/course/add-course/add-course.component";
 import { HeaderModule } from '../shared/components/header/header.module';
 import { AdminComponent } from './pages/admin/admin.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { AdminComponent } from './pages/admin/admin.component';
     MatButtonModule,
     NgOptimizedImage,
     MatToolbarModule,
-    HeaderModule
+    HeaderModule,
+    NgChartsModule
   ],
   providers: [
     {

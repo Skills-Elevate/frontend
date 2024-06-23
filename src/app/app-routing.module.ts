@@ -12,9 +12,10 @@ import { EditComponent } from './pages/courses/course/edit/edit.component';
 import { AddCourseComponent } from './pages/courses/course/add-course/add-course.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import {AdminComponent} from "./pages/admin/admin.component";
-import {AdminGuard} from "../shared/guards/admin.guard";
-import {AuthGuard} from "../shared/guards/auth.guard";
+import { AdminComponent } from "./pages/admin/admin.component";
+import { AdminGuard } from "../shared/guards/admin.guard";
+import { AuthGuard } from "../shared/guards/auth.guard";
+import { LayoutAdminComponent } from "./pages/admin/layout/layout.component";
 
 const routes: Routes = [
   {
@@ -68,8 +69,26 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent,
-    canActivate: [AuthGuard, AdminGuard]
+    component: LayoutAdminComponent,
+    canActivate: [AuthGuard, AdminGuard],
+    children: [
+      {
+        path: '',
+        component: AdminComponent
+      },
+      {
+        path: 'courses',
+        component: CoursesComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
+        path: 'blog',
+        component: BlogComponent
+      }
+    ]
   },
   {
     path: '**',

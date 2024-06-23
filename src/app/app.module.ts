@@ -27,6 +27,10 @@ import { AddCourseComponent } from "./pages/courses/course/add-course/add-course
 import { HeaderModule } from '../shared/components/header/header.module';
 import { AdminComponent } from './pages/admin/admin.component';
 import { NgChartsModule } from 'ng2-charts';
+import { MatGridListModule } from "@angular/material/grid-list";
+import {LayoutAdminComponent} from "./pages/admin/layout/layout.component";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -42,7 +46,8 @@ import { NgChartsModule } from 'ng2-charts';
     CourseComponent,
     EditComponent,
     AddCourseComponent,
-    AdminComponent
+    AdminComponent,
+    LayoutAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,10 @@ import { NgChartsModule } from 'ng2-charts';
     NgOptimizedImage,
     MatToolbarModule,
     HeaderModule,
-    NgChartsModule
+    NgChartsModule,
+    MatGridListModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     {

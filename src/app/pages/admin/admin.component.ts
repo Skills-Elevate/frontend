@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
+import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
 import {DashboardService} from "../../../shared/services/dashboard.service";
 
 @Component({
@@ -12,14 +12,14 @@ export class AdminComponent implements OnInit {
   courseCount: number = 0;
   blogCount: number = 0;
 
-  public barChartOptions: ChartOptions = {
+  public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
   };
   public barChartLabels: string[] = ['Users', 'Courses', 'Blogs'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
-  public barChartData: ChartDataset<'bar'>[] = [
+  public barChartData: ChartConfiguration['data']['datasets'] = [
     { data: [0, 0, 0], label: 'Count' }
   ];
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../../../shared/services/auth.service';
 import { Router } from '@angular/router';
-import { CreateUserDto } from '../../../../shared/models/users.module';
+import {AuthLoginDto} from "../../../../shared/models/users.module";
+import {AuthService} from "../../../../shared/services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -15,13 +15,12 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
-    const credentials: CreateUserDto = { email: this.email, password: this.password };
+    const credentials: AuthLoginDto = { email: this.email, password: this.password };
 
     this.authService.login(credentials).subscribe({
       next: (response) => {
-        console.log(response);
         this.authService.handleLoginResponse(response);
-        this.router.navigate(['/courses']);
+        this.router.navigate(['/admin']); // Redirect to admin if login is successful
       },
       error: (error) => console.error('login failed:', error)
     });

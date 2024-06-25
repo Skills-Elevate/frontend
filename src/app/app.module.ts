@@ -26,6 +26,12 @@ import { MatIconModule } from "@angular/material/icon";
 import { AddCourseComponent } from "./pages/courses/course/add-course/add-course.component";
 import { HeaderModule } from '../shared/components/header/header.module';
 import { GalerieComponent } from './pages/galerie/galerie.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { NgChartsModule } from 'ng2-charts';
+import { MatGridListModule } from "@angular/material/grid-list";
+import {LayoutAdminComponent} from "./pages/admin/layout/layout.component";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -41,7 +47,9 @@ import { GalerieComponent } from './pages/galerie/galerie.component';
     CourseComponent,
     EditComponent,
     AddCourseComponent,
-    GalerieComponent
+    GalerieComponent,
+    AdminComponent,
+    LayoutAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +67,11 @@ import { GalerieComponent } from './pages/galerie/galerie.component';
     MatButtonModule,
     NgOptimizedImage,
     MatToolbarModule,
-    HeaderModule
+    HeaderModule,
+    NgChartsModule,
+    MatGridListModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     {

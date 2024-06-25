@@ -13,11 +13,17 @@ import { EditComponent } from './pages/courses/course/edit/edit.component';
 import { AddCourseComponent } from './pages/courses/course/add-course/add-course.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import {GalerieComponent} from "./pages/galerie/galerie.component";
 
 const routes: Routes = [
   {
     path: '',
     component: WelcomeComponent,
+  },
+  {
+    canActivate: [UsersGuard],
+    path: 'galerie',
+    component: GalerieComponent,
   },
   {
     canActivate: [AuthGuard],

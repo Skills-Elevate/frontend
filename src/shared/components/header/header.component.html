@@ -8,6 +8,9 @@
 
   <div class="pages-buttons" *ngIf="isDesktop">
     <ul>
+      <li (click)="goToGalerie()">
+        <span>Galerie</span>
+      </li>
       <li (click)="gotToCourse()" *ngIf="isLoggedIn">
         <span>Course</span>
       </li>

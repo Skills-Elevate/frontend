@@ -42,6 +42,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  goToGalerie() {
+    this.router.navigate(['/galerie'])
+  }
+
   gotToCourse() {
     this.toggleMenu(); // Ferme le menu
     this.router.navigate(['/courses']);

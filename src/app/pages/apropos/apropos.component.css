@@ -1,0 +1,29 @@
+.about-header, .about-main, .about-footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-header h1 {
+  color: #026497;
+}
+
+.about-section {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.about-logo img {
+  display: block;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.about-footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #666;
+}

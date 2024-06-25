@@ -17,11 +17,17 @@ import { AdminComponent } from "./pages/admin/admin.component";
 import { AdminGuard } from "../shared/guards/admin.guard";
 import { AuthGuard } from "../shared/guards/auth.guard";
 import { LayoutAdminComponent } from "./pages/admin/layout/layout.component";
+import {AproposComponent} from "./pages/apropos/apropos.component";
 
 const routes: Routes = [
   {
     path: '',
     component: WelcomeComponent,
+  },
+  {
+    canActivate: [UsersGuard],
+    path: 'apropos',
+    component: AproposComponent,
   },
   {
     canActivate: [UsersGuard],

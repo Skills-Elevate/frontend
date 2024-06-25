@@ -1,5 +1,8 @@
-let Host = 'http://localhost';
-let Port = '3000';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+let Host = process.env['API_HOST'] || 'http://localhost';
+let Port = process.env['API_PORT'] || '3000';
 
 export const environment = {
   production: true,

@@ -32,6 +32,7 @@ import { MatGridListModule } from "@angular/material/grid-list";
 import {LayoutAdminComponent} from "./pages/admin/layout/layout.component";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
+import { AproposComponent } from './pages/apropos/apropos.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {MatListModule} from "@angular/material/list";
     AddCourseComponent,
     GalerieComponent,
     AdminComponent,
-    LayoutAdminComponent
+    LayoutAdminComponent,
+    AproposComponent
   ],
   imports: [
     BrowserModule,

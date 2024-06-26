@@ -3,7 +3,8 @@ export interface ChannelI {
   name: string;
   ChannelMembership: ChannelMembership[];
   messages: Message[];
-  currentUserName: string
+  currentUserName: string;
+  studentName: string;
 }
 
 export interface ChannelMembership {

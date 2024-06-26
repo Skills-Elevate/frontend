@@ -1,7 +1,11 @@
 mat-toolbar {
+  display: flex;
   background: var(--dark-blue);
   padding: 2rem;
   height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 99999;
 }
 
 mat-toolbar .logo {
@@ -62,11 +66,6 @@ mat-toolbar span, mat-toolbar button {
   cursor: pointer;
   color: var(--primary-color);
 }
-
-
-
-
-
 
 .drawer-container {
   height: 100%;

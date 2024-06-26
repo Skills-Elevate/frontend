@@ -1,0 +1,17 @@
+<div class="filters-members">
+  <input type="text" placeholder="Type to filter members..." [(ngModel)]="filter" (input)="filterChannels()" />
+</div>
+
+<div class="members">
+  <h3>Messages</h3>
+</div>
+
+<mat-list *ngFor="let channel of filteredChannels" (click)="navigateToChannel(channel.id)">
+  <mat-list-item>
+    <div class="items">
+      <div>
+        <p>{{ channel.name }}</p>
+      </div>
+    </div>
+  </mat-list-item>
+</mat-list>

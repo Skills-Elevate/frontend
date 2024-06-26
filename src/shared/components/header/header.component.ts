@@ -55,6 +55,11 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/courses']);
   }
 
+  gotToMessage() {
+    this.toggleMenu(); // Ferme le menu
+    this.router.navigate(['/messages']);
+  }
+
   goToProfile() {
     this.toggleMenu(); // Ferme le menu
     this.router.navigate(['/profile']);

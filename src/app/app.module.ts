@@ -33,6 +33,7 @@ import {LayoutAdminComponent} from "./pages/admin/layout/layout.component";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import { AproposComponent } from './pages/apropos/apropos.component';
+import { MessagesComponent } from './pages/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { AproposComponent } from './pages/apropos/apropos.component';
     GalerieComponent,
     AdminComponent,
     LayoutAdminComponent,
-    AproposComponent
+    AproposComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

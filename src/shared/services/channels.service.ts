@@ -16,10 +16,8 @@ export class ChannelsService {
     return this.http.post<CreateChannelDto>(`${this.apiUrl}/channels`, createChannelDto);
   }
 
-  findAll(acceptedAccess: boolean): Observable<ChannelI[]> {
-    return this.http.get<ChannelI[]>(`${this.apiUrl}/channels`, {
-      params: { acceptedAccess: acceptedAccess.toString() },
-    });
+  findAll(): Observable<ChannelI[]> {
+    return this.http.get<ChannelI[]>(`${this.apiUrl}/channels`);
   }
 
   findOne(id: string): Observable<ChannelI> {

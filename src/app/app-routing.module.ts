@@ -17,7 +17,8 @@ import { AdminComponent } from "./pages/admin/admin.component";
 import { AdminGuard } from "../shared/guards/admin.guard";
 import { AuthGuard } from "../shared/guards/auth.guard";
 import { LayoutAdminComponent } from "./pages/admin/layout/layout.component";
-import {AproposComponent} from "./pages/apropos/apropos.component";
+import { AproposComponent } from "./pages/apropos/apropos.component";
+import { MessagesComponent } from './pages/messages/messages.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     path: 'courses',
     component: CoursesComponent,
+  },
+  {
+    canActivate: [AuthGuard],
+    path: 'messages',
+    component: MessagesComponent,
   },
   {
     path: 'channel/:id',

@@ -26,12 +26,10 @@ const routes: Routes = [
     component: WelcomeComponent,
   },
   {
-    canActivate: [UsersGuard],
     path: 'apropos',
     component: AproposComponent,
   },
   {
-    canActivate: [UsersGuard],
     path: 'galerie',
     component: GalerieComponent,
   },

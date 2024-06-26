@@ -1,5 +1,5 @@
-let Host = 'http://http://157.230.103.186';
-let Port = '1224';
+let Host = 'http://localhost';
+let Port = '3000';
 
 export const environment = {
   production: true,
